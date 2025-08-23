@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizMaster - Question Bank</title>
+    <style>
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #166088;
+            --accent: #4caf50;
+            --light: #f5f7fa;
+            --dark: #2c3e50;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f4f8;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .search-container {
+            display: flex;
+            margin: 1rem 0;
+        }
+        
+        #searchInput {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 1rem;
+            box-shadow: var(--shadow);
+        }
+        
+        #searchBtn {
+            padding: 0 1.2rem;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        #searchBtn:hover {
+            background-color: #3d8b40;
+        }
+        
+        .filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .questions-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .question-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .question-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .question-number {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 0 0 8px 0;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .question-text {
+            margin-bottom: 1rem;
+            font-weight: 500;
+            padding-top: 0.5rem;
+        }
+        
+        .options-list {
+            margin: 0.8rem 0;
+            padding-left: 1.5rem;
+            color: #555;
+        }
+        
+        .answer-section {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed #ddd;
+        }
+        
+        .show-answer-btn {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 0.5rem;
+        }
+        
+        .show-answer-btn:hover {
+            background-color: #3d8b40;
+        }
+        
+        .answer {
+            display: none;
+            margin-top: 0.8rem;
+            padding: 0.8rem;
+            background-color: #e8f5e9;
+            border-radius: 4px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .search-container {
+                width: 100%;
+                margin-top: 1rem;
+            }
+            
+            .questions-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Engineering-26-A-Test 1</div>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search questions...">
+                    <button id="searchBtn">Search</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All Questions</button>
+            <button class="filter-btn" data-filter="math">Math Problems</button>
+            <button class="filter-btn" data-filter="grammar">Grammar</button>
+            <button class="filter-btn" data-filter="logic">Logic</button>
+        </div>
+        
+        <div class="questions-container" id="questionsContainer">
+            <!-- Questions will be inserted here by JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 QuizMaster - Interactive Question Bank</p>
+        </div>
+    </footer>
+
+    <script>
+        // Question data
+        const questions = [
+            {
+                id: 1,
+                question: "A father is 40 years old and his son is 10 years old. In how many years will the father be exactly three times as old as his son?",
+                options: ["5","10", "15", "20"],
+                answer: "5",
+                category: "math"
+            },
+            {
+                id: 2,
+                question: "Not only the bandit rob the person of his purse but he also wounded him. Identify the part without error.",
+                options: ["Not only the bandit", "rob the person", "of his purse", "but he also wounded him", "No error"],
+                answer: "but he also wounded him",
+                category: "grammar"
+            },
+            {
+                id: 3,
+                question: "A pump can fill a tank in 2 hours. However, due to a leak, it took 3 hours to fill the tank. How long would the leak alone take to empty a full tank?",
+                options: ["3h", "4h", "5h", "6h"],
+                answer: "6h",
+                category: "math"
+            },
+            {
+                id: 4,
+                question: "Smallest 5-digit number exactly divisible by 11:",
+                options: ["10001", "10010", "11000", "11121"],
+                answer: "10010",
+                category: "math"
+            },
+            {
+                id: 5,
+                question: "Find the missing term: C, X, M, N, J ?",
+                options: [],
+                answer: "Q",
+                category: "logic"
+            },
+            {
+                id: 6,
+                question: "The sum of the ages of 4 children born at the intervals of 3 years each is 58 years. What is the age of the youngest child?",
+                options: ["4", "6", "8", "10"],
+                answer: "10 years",
+                category: "math"
+            },
+            {
+                id: 7,
+                question: "Father is 5 years older than the mother and the mother's age now is thrice the age of the daughter. The daughter is now 10 years old. What was the father's age when the daughter was born?",
+                options: ["20", "15", "25", "30"],
+                answer: "25",
+                category: "math"
+            },
+            {
+                id: 8,
+                question: "Pointing towards a man in a photograph, a woman says, 'His brother's father is the only son of my Maternal Grandfather.' How is the woman related to that man?",
+                options: ["Mother", "Daughter", "Sister", "Cousin"],
+                answer: "Cousin",
+                category: "logic"
+            },
+            {
+                id: 9,
+                question: "For what values of m is y + (1/4)root(y) + m² a perfect square?",
+                options: [],
+                answer: "1/3",
+                category: "math"
+            },
+            {
+                id: 10,
+                question: "The sum of two non-co-prime numbers added to their HCF gives 91. How many such pairs are possible?",
+                options: [],
+                answer: "3",
+                category: "math"
+            },
+            {
+                id: 11,
+                question: "Find the greatest number that will divide 168, 252, and 324 leaving the same remainder.",
+                options: ["6", "12", "18", "24"],
+                answer: "12",
+                category: "math"
+            },
+            {
+                id: 12,
+                question: "Mother made a cake yesterday. (Convert to passive voice)",
+                options: [],
+                answer: "A cake was made by mother yesterday",
+                category: "grammar"
+            },
+            {
+                id: 13,
+                question: "A and B working separately can finish a work in 12 and 18 days respectively. If they work together for 5 days and then A goes away, in how many days B will complete the work?",
+                options: ["5", "6.5", "6", "5.5"],
+                answer: "6.5 days",
+                category: "math"
+            },
+            {
+                id: 14,
+                question: "A shopkeeper sells an item for Rs. 660 at a profit of 10%. What was the cost price?",
+                options: ["600", "606", "594", "540"],
+                answer: "600",
+                category: "math"
+            },
+            {
+                id: 15,
+                question: "A can do work in 10 days, B in 15 days. They work together for 3 days. What percentage remains?",
+                options: [],
+                answer: "50%",
+                category: "math"
+            },
+            {
+                id: 16,
+                question: "When I got home I was too exhausted.",
+                options: [],
+                answer: "No error",
+                category: "grammar"
+            },
+            {
+                id: 17,
+                question: "Two angles are supplementary and the ratio is 1:4. Find the smaller angle.",
+                options: ["36°", "45°", "35°", "72°"],
+                answer: "36°",
+                category: "math"
+            },
+            {
+                id: 18,
+                question: "Boat downstream 6h, upstream 4h. Boat speed 40 km/h, stream 20 km/h. Total distance?",
+                options: ["240", "440", "180", "120"],
+                answer: "440 km",
+                category: "math"
+            },
+            {
+                id: 19,
+                question: "Tanks and trench warfare passage. Implicit assumption?",
+                options: [],
+                answer: "The stalemate of trench warfare can be overcome by tanks",
+                category: "logic"
+            },
+            {
+                id: 20,
+                question: "Traffic has increased; travel time ISBT → Daryaganj 1h. Which course of action follows?",
+                options: ["I, II, III"],
+                answer: "Only II follows",
+                category: "logic"
+            },
+            {
+                id: 21,
+                question: "How many distinct ways can letters of 'APPLE' be arranged?",
+                options: ["60", "64", "120", "240"],
+                answer: "60",
+                category: "math"
+            },
+            {
+                id: 22,
+                question: "30 men, 100 days, after 25 days only 20% done. Extra days required?",
+                options: [],
+                answer: "25 days",
+                category: "math"
+            },
+            {
+                id: 23,
+                question: "Coding CABLE → 10-8-9-15-12, Find DEAR",
+                options: [],
+                answer: "11-12-8-25",
+                category: "logic"
+            },
+            {
+                id: 24,
+                question: "My brother-in-laws who live in Bombay have come. Identify correct part.",
+                options: [],
+                answer: "who live in Bombay",
+                category: "grammar"
+            },
+            {
+                id: 25,
+                question: "Concept of divisibility exists in?",
+                options: [],
+                answer: "Integers",
+                category: "math"
+            },
+            {
+                id: 26,
+                question: "I am doing this job since",
+                options: [],
+                answer: "this job",
+                category: "grammar"
+            },
+            {
+                id: 27,
+                question: "I know _____ truth.",
+                options: [],
+                answer: "the",
+                category: "grammar"
+            },
+            {
+                id: 28,
+                question: "Two equal amounts lent at 6% and 5%, recovered 2880 each, former 2 years early. Money lent?",
+                options: [],
+                answer: "1800",
+                category: "math"
+            },
+            {
+                id: 29,
+                question: "Year next to 1990 with same calendar?",
+                options: ["1992", "1995", "2001", "1998"],
+                answer: "1995",
+                category: "math"
+            },
+            {
+                id: 30,
+                question: "Cube painted 2 faces yellow, opposite faces blue, remaining green. Cut into 125 cubes. How many < 3 faces painted?",
+                options: [],
+                answer: "117",
+                category: "math"
+            },
+            {
+                id: 31,
+                question: "Paragraph sequencing (Kenya & Africa)",
+                options: [],
+                answer: "CBDAE",
+                category: "logic"
+            },
+            {
+                id: 32,
+                question: "45-percent spent",
+                options: [],
+                answer: "About",
+                category: "grammar"
+            },
+            {
+                id: 33,
+                question: "Area = 154 cm², π = 22/7. Radius?",
+                options: ["7", "14", "5.5", "10"],
+                answer: "7 cm",
+                category: "math"
+            },
+            {
+                id: 34,
+                question: "1970: 11.25 per litre, 66% food. 1973: food +55%, wages +45%. Cost per litre?",
+                options: [],
+                answer: "Rs. 17.055",
+                category: "math"
+            },
+            {
+                id: 35,
+                question: "The front page story was about a school girl that had hurt herself…",
+                options: [],
+                answer: "that had hurt herself",
+                category: "grammar"
+            },
+            {
+                id: 36,
+                question: "'Do not allow candidates to leave except in emergency.' Which assumptions are implicit?",
+                options: [],
+                answer: "I and II are implicit",
+                category: "logic"
+            },
+            {
+                id: 37,
+                question: "Two dice rolled. Probability sum even?",
+                options: ["1/2", "5/12", "3/4"],
+                answer: "1/2",
+                category: "math"
+            },
+            {
+                id: 38,
+                question: "Bells toll at intervals 3,6,9,12,15,18s. In 60 min, how many times together?",
+                options: [],
+                answer: "21",
+                category: "math"
+            },
+            {
+                id: 39,
+                question: "Average age =19, boys 20 (20 boys), girls 17. Number of girls?",
+                options: [],
+                answer: "10",
+                category: "math"
+            },
+            {
+                id: 40,
+                question: "I said to my friend, 'Can you swim?' (Convert to indirect speech)",
+                options: [],
+                answer: "I asked my friend whether he could swim",
+                category: "grammar"
+            }
+        ];
+
+        // DOM elements
+        const questionsContainer = document.getElementById('questionsContainer');
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        
+        // Display questions
+        function displayQuestions(questionsToDisplay) {
+            questionsContainer.innerHTML = '';
+            
+            if (questionsToDisplay.length === 0) {
+                questionsContainer.innerHTML = `
+                    <div class="no-results">
+                        <h3>No questions found</h3>
+                        <p>Try a different search term or filter</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            questionsToDisplay.forEach(q => {
+                const optionsHtml = q.options.length > 0 
+                    ? `<ul class="options-list">${q.options.map(opt => `<li>${opt}</li>`).join('')}</ul>` 
+                    : '';
+                
+                const questionCard = document.createElement('div');
+                questionCard.className = 'question-card';
+                questionCard.dataset.category = q.category;
+                questionCard.innerHTML = `
+                    <div class="question-number">Q${q.id}</div>
+                    <div class="question-text">${q.question}</div>
+                    ${optionsHtml}
+                    <div class="answer-section">
+                        <button class="show-answer-btn">Show Answer</button>
+                        <div class="answer">
+                            <strong>Answer:</strong> ${q.answer}
+                        </div>
+                    </div>
+                `;
+                
+                questionsContainer.appendChild(questionCard);
+            });
+            
+            // Add event listeners to show answer buttons
+            document.querySelectorAll('.show-answer-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                    this.textContent = answer.style.display === 'block' ? 'Hide Answer' : 'Show Answer';
+                });
+            });
+        }
+        
+        // Filter questions based on search and category
+        function filterQuestions() {
+            const searchText = searchInput.value.toLowerCase();
+            const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+            
+            const filteredQuestions = questions.filter(q => {
+                const matchesSearch = q.question.toLowerCase().includes(searchText) || 
+                                     q.answer.toLowerCase().includes(searchText) ||
+                                     q.options.some(opt => opt.toLowerCase().includes(searchText));
+                
+                const matchesFilter = activeFilter === 'all' || q.category === activeFilter;
+                
+                return matchesSearch && matchesFilter;
+            });
+            
+            displayQuestions(filteredQuestions);
+        }
+        
+        // Event listeners
+        searchInput.addEventListener('input', filterQuestions);
+        searchBtn.addEventListener('click', filterQuestions);
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                filterQuestions();
+            });
+        });
+        
+        // Initial display
+        displayQuestions(questions);
+    </script>
+</body>
+</html>
