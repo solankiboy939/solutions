@@ -28,7 +28,7 @@ const testsConfig = [
         description: "Basic grammar test perfect for beginners and intermediate learners.",
         questions: 40,
         timeLimit: 45,
-        difficulty: "Beginner",
+        difficulty: "Intermediate",
         categories: ["Grammar", "Basic"],
         file: "test_3.html",
         lastUpdated: "2025-08-24"
@@ -191,4 +191,5 @@ document.addEventListener('DOMContentLoaded', function() {
     const testCards = document.querySelectorAll('.test-card');
     testCards.forEach(card => observer.observe(card));
 });
+
 
