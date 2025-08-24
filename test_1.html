@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering 2-26-V-Test 1 - English Grammar Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-left">
+                    <a href="index.html" class="back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Dashboard
+                    </a>
+                </div>
+                <div class="header-center">
+                    <h1><i class="fas fa-graduation-cap"></i> Engineering 2-26-V-Test 1</h1>
+                    <p>Complete set of 40 questions with detailed answers and explanations</p>
+                </div>
+                <div class="header-right">
+                    <div class="test-info">
+                        <span class="info-item">
+                            <i class="fas fa-clock"></i>
+                            60 min
+                        </span>
+                        <span class="info-item">
+                            <i class="fas fa-question-circle"></i>
+                            40 questions
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search questions, topics, or keywords...">
+                <button id="clearSearch" class="clear-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Questions</button>
+                <button class="filter-btn" data-filter="spelling">Spelling</button>
+                <button class="filter-btn" data-filter="vocabulary">Vocabulary</button>
+                <button class="filter-btn" data-filter="grammar">Grammar</button>
+                <button class="filter-btn" data-filter="idioms">Idioms</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="stats-bar">
+                <div class="stat">
+                    <span class="stat-number" id="totalQuestions">40</span>
+                    <span class="stat-label">Total Questions</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="visibleQuestions">40</span>
+                    <span class="stat-label">Visible</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="searchResults">0</span>
+                    <span class="stat-label">Search Results</span>
+                </div>
+            </div>
+
+            <div class="questions-container" id="questionsContainer">
+                <!-- Questions will be populated by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 English Grammar Tests. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="test_1.js"></script>
+</body>
+</html>
