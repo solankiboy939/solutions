@@ -18,14 +18,12 @@
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --radius: 8px;
         }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
         body {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             color: var(--dark);
@@ -33,7 +31,6 @@
             min-height: 100vh;
             padding-bottom: 2rem;
         }
-        
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -41,77 +38,64 @@
             box-shadow: var(--shadow);
             margin-bottom: 2rem;
         }
-        
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
         }
-        
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
         }
-        
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
             display: flex;
             align-items: center;
         }
-        
         .logo i {
             margin-right: 0.5rem;
             color: var(--accent);
         }
-        
         .nav-links {
             display: flex;
             gap: 1.5rem;
         }
-        
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 500;
             transition: opacity 0.3s;
         }
-        
         .nav-links a:hover {
             opacity: 0.8;
         }
-        
         .page-title {
             text-align: center;
             margin-bottom: 2rem;
             color: var(--dark);
         }
-        
         .page-title h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
-        
         .page-title p {
             color: var(--gray);
             font-size: 1.2rem;
         }
-        
         .controls {
             display: flex;
             gap: 1rem;
             margin-bottom: 2rem;
             flex-wrap: wrap;
         }
-        
         .search-container {
             display: flex;
             flex: 1;
             min-width: 300px;
         }
-        
         #searchInput {
             flex: 1;
             padding: 0.8rem 1rem;
@@ -119,7 +103,6 @@
             border-radius: var(--radius) 0 0 var(--radius);
             font-size: 1rem;
         }
-        
         #searchBtn {
             padding: 0 1.5rem;
             background-color: var(--secondary);
@@ -129,16 +112,13 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-        
         #searchBtn:hover {
             background-color: #2980b9;
         }
-        
         .filter-buttons {
             display: flex;
             gap: 0.5rem;
         }
-        
         .filter-btn {
             padding: 0.6rem 1rem;
             background-color: white;
@@ -147,19 +127,16 @@
             cursor: pointer;
             transition: all 0.3s;
         }
-        
         .filter-btn.active, .filter-btn:hover {
             background-color: var(--secondary);
             color: white;
         }
-        
         .questions-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 1.5rem;
             margin-bottom: 2rem;
         }
-        
         .question-card {
             background-color: white;
             border-radius: var(--radius);
@@ -169,11 +146,9 @@
             position: relative;
             overflow: hidden;
         }
-        
         .question-card:hover {
             transform: translateY(-5px);
         }
-        
         .question-number {
             position: absolute;
             top: 0;
@@ -185,31 +160,26 @@
             font-size: 0.9rem;
             font-weight: bold;
         }
-        
         .question-text {
             margin-bottom: 1rem;
             font-weight: 500;
             padding-top: 0.5rem;
             line-height: 1.4;
         }
-        
         .options-list {
             margin: 0.8rem 0;
             padding-left: 1.5rem;
             color: #555;
         }
-        
         .options-list li {
             margin-bottom: 0.4rem;
             list-style-type: upper-alpha;
         }
-        
         .answer-section {
             margin-top: 1rem;
             padding-top: 1rem;
             border-top: 1px dashed #ddd;
         }
-        
         .show-answer-btn {
             background-color: var(--accent);
             color: white;
@@ -223,11 +193,9 @@
             align-items: center;
             gap: 0.5rem;
         }
-        
         .show-answer-btn:hover {
             background-color: #f4511e;
         }
-        
         .answer {
             display: none;
             margin-top: 0.8rem;
@@ -236,12 +204,10 @@
             border-radius: var(--radius);
             border-left: 4px solid var(--success);
         }
-        
         .answer h4 {
             color: var(--success);
             margin-bottom: 0.5rem;
         }
-        
         .explanation {
             display: none;
             margin-top: 0.8rem;
@@ -250,12 +216,10 @@
             border-radius: var(--radius);
             border-left: 4px solid var(--warning);
         }
-        
         .explanation h4 {
             color: var(--warning);
             margin-bottom: 0.5rem;
         }
-        
         .no-results {
             grid-column: 1 / -1;
             text-align: center;
@@ -264,13 +228,11 @@
             border-radius: var(--radius);
             box-shadow: var(--shadow);
         }
-        
         .no-results i {
             font-size: 3rem;
             color: #ccc;
             margin-bottom: 1rem;
         }
-        
         footer {
             background-color: var(--dark);
             color: white;
@@ -278,47 +240,38 @@
             padding: 2rem 0;
             margin-top: 3rem;
         }
-        
         .footer-content {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        
         .footer-links {
             display: flex;
             gap: 1.5rem;
             margin: 1rem 0;
         }
-        
         .footer-links a {
             color: white;
             text-decoration: none;
         }
-        
         .footer-links a:hover {
             text-decoration: underline;
         }
-        
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
                 text-align: center;
                 gap: 1rem;
             }
-            
             .nav-links {
                 justify-content: center;
             }
-            
             .controls {
                 flex-direction: column;
             }
-            
             .search-container {
                 min-width: 100%;
             }
-            
             .questions-container {
                 grid-template-columns: 1fr;
             }
@@ -330,7 +283,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <i class="fas fa-book-open"></i> Engineering Test Viewer
+                    <i class="fas fa-book-open"></i> Engineering-26-V-Test 1
                 </div>
                 <div class="nav-links">
                     <a href="#">Home</a>
@@ -341,13 +294,11 @@
             </div>
         </div>
     </header>
-
     <main class="container">
         <div class="page-title">
             <h1>Engineering-26-V-Test 1</h1>
             <p>View all 40 questions with answers and explanations</p>
         </div>
-        
         <div class="controls">
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Search questions...">
@@ -359,12 +310,10 @@
                 <button class="filter-btn" data-filter="unanswered">Without Answers</button>
             </div>
         </div>
-        
         <div class="questions-container" id="questionsContainer">
             <!-- Questions will be inserted here by JavaScript -->
         </div>
     </main>
-
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -376,128 +325,494 @@
                     <a href="#">About</a>
                     <a href="#">Contact</a>
                 </div>
-                <p>&copy; 2023 Engineering Test Viewer. All rights reserved.</p>
+                <p>&copy; 2024 Engineering Test Viewer. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Question data for all 40 questions
+        // Full list of 40 questions from your provided text
         const questions = [
             {
                 id: 1,
-                question: "A father is 40 years old and his son is 10 years old. In how many years will the father be exactly three times as old as his son?",
-                options: ["10 years", "15 years", "20 years", "5 years"],
-                answer: "5 years",
-                explanation: "Let x be the number of years until the father is three times as old as his son. Then, 40 + x = 3(10 + x). Solving gives x = 5."
+                question: "Person A: \"I've been spending too much money on clothes lately.\"<br>Person B: \"It's easy to get carried away sometimes. Are you trying to cut back?\"<br>Person A: \"Yes, I need to be more mindful of my spending.\"<br>Person B: \"...\"",
+                options: [
+                    "Maybe you could set a monthly budget for clothes.",
+                    "You should try to avoid going shopping for a while.",
+                    "Clothes can be expensive, but they're worth it.",
+                    "Have you tried selling some of your old clothes?"
+                ],
+                answer: "Maybe you could set a monthly budget for clothes.",
+                explanation: "This response is practical advice that aligns with Person A’s concern about spending. Other options are either too negative, dismissive, or divert the conversation."
             },
             {
                 id: 2,
-                question: "Not only the bandit rob the person of his purse but he also wounded him. Identify the part without error.",
-                options: ["Not only the bandit", "rob the person", "of his purse", "but he also wounded him", "No error"],
-                answer: "but he also wounded him",
-                explanation: "The phrase 'but he also wounded him' is grammatically correct. The error is in 'rob' which should be 'robbed' to maintain parallel structure with 'wounded'."
+                question: "Person A: \"I've been feeling really overwhelmed at work lately. There's just so much to do.\"<br>Person B: \"I know what you mean. It's hard to stay on top of everything.\"<br>Person A: \"I've been staying late almost every day.\"<br>Person B: \"...\"",
+                options: [
+                    "Maybe you should ask for help with your tasks.",
+                    "You should take a break, working too much isn't healthy.",
+                    "That sounds exhausting. Have you talked to your manager?",
+                    "Don't worry, it'll all get done eventually."
+                ],
+                answer: "That sounds exhausting. Have you talked to your manager?",
+                explanation: "This shows empathy and offers a practical next step. Other options are either too direct, judgmental, or dismissive."
             },
             {
                 id: 3,
-                question: "A pump can fill a tank in 2 hours. However, due to a leak, it took 3 hours to fill the tank. How long would the leak alone take to empty a full tank?",
-                options: ["3 hours", "4 hours", "5 hours", "6 hours"],
-                answer: "6 hours",
-                explanation: "The pump's rate is 1/2 tank per hour. With the leak, the rate is 1/3 tank per hour. So the leak's rate is 1/2 - 1/3 = 1/6 tank per hour. Therefore, the leak alone would take 6 hours to empty a full tank."
+                question: "Person A: \"I'm thinking of taking a weekend trip soon, maybe somewhere nearby.\"<br>Person B: \"That sounds like a great idea! Where are you thinking of going?\"<br>Person A: \"I'm not sure, maybe a city I've never visited before.\"<br>Person B: \"...\"",
+                options: [
+                    "You should check out a smaller town. It's less crowded.",
+                    "A city with a beach would be nice for a weekend trip.",
+                    "Maybe you should choose a place with nature and hiking trails.",
+                    "How about a historical city? It could be fun to explore."
+                ],
+                answer: "How about a historical city? It could be fun to explore.",
+                explanation: "This aligns with Person A’s interest in visiting a new city. Other options suggest alternatives not focused on cities."
             },
             {
                 id: 4,
-                question: "Smallest 5-digit number exactly divisible by 11:",
-                options: ["10001", "10010", "11000", "11121"],
-                answer: "10010",
-                explanation: "The smallest 5-digit number is 10000. Dividing 10000 by 11 gives a remainder of 10. So we need to add 1 to make it 10001, but 10001 ÷ 11 = 909.181... Next is 10010 ÷ 11 = 910 exactly."
+                question: "Person A: \"I can't believe how much snow we've had this year.\"<br>Person B: \"Yeah, it's definitely unusual for this time of year. I hope it clears up soon.\"<br>Person A: \"I'm looking forward to spring, when it's warmer and sunnier.\"<br>Person B: \"Me too. I'm ready for the sunshine.\"<br><br>What is Person A's main concern?",
+                options: [
+                    "The cold weather",
+                    "The amount of snow",
+                    "The arrival of spring",
+                    "The sunny weather"
+                ],
+                answer: "The arrival of spring",
+                explanation: "Person A explicitly expresses anticipation for spring. Snow and cold are context, not the main focus."
             },
             {
                 id: 5,
-                question: "Find the missing term: o, p, o, ?",
-                options: ["p", "q", "o", "r"],
-                answer: "p",
-                explanation: "The pattern is alternating between 'o' and 'p'. So after o, p, o, the next should be p."
+                question: "Person A: \"I've been thinking of trying a new hobby, something creative.\"<br>Person B: \"That sounds fun! What are you interested in?\"<br>Person A: \"I'm thinking about painting or photography.\"<br>Person B: \"...\"",
+                options: [
+                    "Both are great! Maybe try a beginner's class to get started.",
+                    "You should stick to something practical instead.",
+                    "Why don't you try writing? It's creative too.",
+                    "I'm sure you'll enjoy either one. They're both relaxing."
+                ],
+                answer: "Both are great! Maybe try a beginner's class to get started.",
+                explanation: "This encourages action and supports creativity. Other options discourage or redirect."
             },
             {
                 id: 6,
-                question: "The sum of the ages of 4 children born at the intervals of 3 years each is 58 years. What is the age of the youngest child?",
-                options: ["4 years", "6 years", "8 years", "10 years"],
-                answer: "10 years",
-                explanation: "Let the youngest child's age be x. Then the ages are x, x+3, x+6, x+9. Their sum is 4x + 18 = 58. Solving gives x = 10."
+                question: "Person A: \"I've been trying to keep up with my workout routine, but it's tough to stay motivated.\"<br>Person B: \"It can be hard to stay on track. What kind of workouts are you doing?\"<br>Person A: \"Mostly cardio and weight training.\"<br>Person B: \"...\"",
+                options: [
+                    "Have you tried mixing things up with a new type of exercise?",
+                    "Maybe you need to cut down on your workouts. You don't want to burn out.",
+                    "I think you're doing too much. Maybe focus on just one type of exercise.",
+                    "You should try working out with a friend to make it more fun."
+                ],
+                answer: "Have you tried mixing things up with a new type of exercise?",
+                explanation: "This addresses motivation through variety. Other options suggest reducing effort or adding social pressure."
             },
             {
                 id: 7,
-                question: "Father is 5 years older than the mother and the mother's age now is thrice the age of the daughter. The daughter is now 10 years old. What was the father's age when the daughter was born?",
-                options: ["20 years", "15 years", "25 years", "30 years"],
-                answer: "25 years",
-                explanation: "Daughter is 10, so mother is 3×10 = 30 years. Father is 5 years older than mother, so 35 years. When daughter was born (10 years ago), father was 35 - 10 = 25 years."
+                question: "Person A: \"I've been trying to eat healthier recently. I'm cutting out junk food.\"<br>Person B: \"That's great! How's it going?\"<br>Person A: \"It's tough, but I'm managing. I'm sticking to fruits and veggies.\"<br>Person B: \"Keep it up! It's definitely worth it in the long run.\"<br><br>What is Person A trying to do?",
+                options: [
+                    "Lose weight",
+                    "Eat more junk food",
+                    "Eat healthier",
+                    "Follow a specific diet"
+                ],
+                answer: "Eat healthier",
+                explanation: "Person A clearly states they are cutting out junk food and eating fruits/veggies. No mention of weight or a specific diet plan."
             },
             {
                 id: 8,
-                question: "Pointing towards a man in a photograph, a woman says, 'His brother's father is the only son of my Maternal Grandfather.' How is the woman related to that man?",
-                options: ["Mother", "Daughter", "Sister", "Cousin"],
-                answer: "Cousin",
-                explanation: "The only son of maternal grandfather is the woman's father. So the man's brother's father is the woman's father, meaning the man and woman are siblings or cousins. Since it's 'brother's father', they share the same father, so they are siblings."
+                question: "Person A: \"I'm really nervous about the presentation tomorrow. I haven't had much time to prepare.\"<br>Person B: \"I'm sure you'll do fine. You're great at public speaking.\"<br>Person A: \"I hope so, but I keep thinking I might forget everything.\"<br>Person B: \"...\"",
+                options: [
+                    "Don't worry, just take a deep breath and focus.",
+                    "You should probably cancel the presentation.",
+                    "Have you tried writing everything down?",
+                    "You should rehearse more before tomorrow."
+                ],
+                answer: "Don't worry, just take a deep breath and focus.",
+                explanation: "This provides emotional support and reassurance. Other options are negative, redundant, or less empathetic."
             },
             {
                 id: 9,
-                question: "For what values of m is y + 1/4y² + m² a perfect square?",
-                options: ["1/2", "1/3", "1/4", "1/5"],
-                answer: "1/3",
-                explanation: "The expression is a perfect square if it can be written as (a + b)² = a² + 2ab + b². Compare with y + 1/4y² + m². We need 2ab = y and a² = m², b² = 1/4y². So b = ±1/2y, a = ±m, and 2(±m)(±1/2y) = y. This gives m = 1/2, but wait. Let's solve: The expression is 1/4y² + y + m². For it to be a perfect square, it should be (1/2y + k)² = 1/4y² + yk + k². So we need yk = y and k² = m². Thus k=1 and m=±1. But this is not in options. Alternatively, if we consider (1/2y + m)² = 1/4y² + y m + m². So we need y m = y, thus m=1. But 1 is not in options. There might be a mistake in the question or options. Based on the answer given, m=1/3."
+                question: "Person A: \"Did you hear about the new restaurant that opened downtown?\"<br>Person B: \"Yes, I've heard good things about it. Have you been?\"<br>Person A: \"Not yet, but I'm planning to check it out this weekend.\"<br>Person B: \"Let me know if you need a dinner companion. I'd love to try it!\"<br><br>What is Person B’s reaction to the new restaurant?",
+                options: [
+                    "Indifferent",
+                    "Disinterested",
+                    "Excited",
+                    "Uncertain"
+                ],
+                answer: "Excited",
+                explanation: "Person B shows enthusiasm by offering to go together. This indicates interest and excitement."
             },
             {
                 id: 10,
-                question: "The sum of two non-co-prime numbers added to their HCF gives 91. How many such pairs are possible?",
-                options: ["2", "3", "4", "5"],
-                answer: "3",
-                explanation: "Let the numbers be a and b, and their HCF be h. Then a = hx, b = hy, where x and y are co-prime. The sum is h(x+y) + h = h(x+y+1) = 91. So h is a factor of 91. The factors of 91 are 1,7,13,91. But since the numbers are non-co-prime, h≠1. So h=7,13,91. For each h, we need to find pairs (x,y) such that x and y are co-prime and x+y+1 = 91/h. So for h=7, x+y+1=13 => x+y=12. Co-prime pairs with sum 12: (1,11), (5,7), (7,5), (11,1) but (1,11) and (11,1) are essentially same pair, so 2 pairs. Similarly for h=13, x+y+1=7 => x+y=6. Co-prime pairs: (1,5), (5,1) - 1 pair. For h=91, x+y+1=1 => x+y=0, not possible. So total 2+1=3 pairs."
+                question: "Person A: \"I'm thinking about buying a new phone. Mine's getting really old.\"<br>Person B: \"That's a good idea. Are you looking at any specific models?\"<br>Person A: \"I'm not sure yet, but I want one with a better camera.\"<br>Person B: \"...\"",
+                options: [
+                    "You should go with the latest iPhone, it has an amazing camera.",
+                    "You could get a great deal on a refurbished one.",
+                    "Maybe try a Samsung. Their cameras are fantastic too.",
+                    "I wouldn't worry too much about the camera; other features are important."
+                ],
+                answer: "Maybe try a Samsung. Their cameras are fantastic too.",
+                explanation: "This is helpful and neutral, matching Person A’s camera interest. Other options are either pushy, off-topic, or dismissive."
             },
-            // Add the remaining 30 questions here in the same format
-            // For brevity, I'm adding a few more as examples
             {
                 id: 11,
-                question: "Find the greatest number that will divide 168, 252, and 324 leaving the same remainder.",
-                options: ["6", "12", "18", "24"],
-                answer: "12",
-                explanation: "Let the remainder be r. Then (168 - r), (252 - r), (324 - r) are divisible by the number. The differences between these numbers will also be divisible by the number. The differences are (252-168)=84, (324-252)=72, (324-168)=156. The HCF of 84,72,156 is 12. So the number is 12."
+                question: "Person A: \"I'm having a hard time choosing between two vacation destinations.\"<br>Person B: \"What are the two places?\"<br>Person A: \"One is a beach destination, and the other is a mountain retreat.\"<br>Person B: \"...\"",
+                options: [
+                    "It depends on what kind of vacation you want. Do you want relaxation or adventure?",
+                    "Maybe you should flip a coin and see which one comes up.",
+                    "Both sound great! Why not try both next time?",
+                    "I think you should go to the beach. It sounds more relaxing."
+                ],
+                answer: "It depends on what kind of vacation you want. Do you want relaxation or adventure?",
+                explanation: "This helps Person A reflect on their preferences. Other options are either impractical or directive."
             },
             {
                 id: 12,
-                question: "Mother made a cake yesterday. (Convert to passive voice)",
+                question: "Person A: \"I'm thinking of starting a blog about my travels.\"<br>Person B: \"That's a great idea! What kind of content are you planning to post?\"<br>Person A: \"I want to share my experiences and tips for other travelers.\"<br>Person B: \"...\"",
                 options: [
-                    "A cake was made by mother yesterday.",
-                    "A cake is made by mother yesterday.",
-                    "A cake made by mother yesterday.",
-                    "A cake has been made by mother yesterday."
+                    "Starting a blog is a lot of work. Are you sure you're ready?",
+                    "You should also write about local cuisines and the best restaurants.",
+                    "That sounds amazing! Make sure you include lots of pictures too.",
+                    "You could just post about your travels on social media instead."
                 ],
-                answer: "A cake was made by mother yesterday",
-                explanation: "The correct passive voice form for simple past tense is 'was/were + past participle'. 'Yesterday' indicates past tense, so 'was made' is correct."
+                answer: "That sounds amazing! Make sure you include lots of pictures too.",
+                explanation: "This is supportive and adds helpful advice. Other options discourage or redirect."
             },
             {
                 id: 13,
-                question: "A and B working separately can finish a work in 12 and 18 days respectively. If they work together for 5 days and then A goes away, in how many days B will complete the work?",
-                options: ["5 days", "6.5 days", "6 days", "5.5 days"],
-                answer: "6.5 days",
-                explanation: "A's rate = 1/12 work/day, B's rate = 1/18 work/day. Together for 5 days: 5*(1/12+1/18) = 5*(3/36+2/36)=5*(5/36)=25/36 work done. Remaining work = 11/36. B's time = (11/36)/(1/18)=11/36*18/1=11/2=5.5 days. But wait, the answer is 6.5? Let's recalculate: Actually, after A leaves, only B works. So time for B to complete remaining work = (11/36) / (1/18) = (11/36)*(18/1) = 11/2 = 5.5 days. But the option says 6.5 days. There might be a mistake in the question or options. Based on the answer given, it's 6.5 days."
+                question: "Person A: \"I'm planning to cook dinner tonight. Any suggestions for a simple recipe?\"<br>Person B: \"How about a pasta dish? It's easy and quick to make.\"<br>Person A: \"I love pasta! What kind of sauce should I make?\"<br>Person B: \"...\"",
+                options: [
+                    "You could make a classic tomato sauce with garlic and basil.",
+                    "How about a creamy Alfredo sauce? It's simple and delicious.",
+                    "A pesto sauce would be great if you have fresh herbs.",
+                    "Maybe try a meat-based sauce, like Bolognese."
+                ],
+                answer: "You could make a classic tomato sauce with garlic and basil.",
+                explanation: "Tomato sauce is the simplest and most beginner-friendly. Others may require more ingredients or skill."
             },
-            // Continue adding more questions...
             {
                 id: 14,
-                question: "A shopkeeper sells an item for Rs. 660 at a profit of 10%. What was the cost price?",
-                options: ["600", "606", "594", "540"],
-                answer: "600",
-                explanation: "Selling price = Cost price + Profit = CP + 0.1*CP = 1.1*CP = 660. So CP = 660/1.1 = 600."
+                question: "Person A: \"I'm planning to take a vacation next month. I've been working non-stop and could really use a break.\"<br>Person B: \"That sounds amazing. Where are you planning to go?\"<br>Person A: \"I'm thinking about visiting the beach, somewhere warm and relaxing.\"<br>Person B: \"...\"",
+                options: [
+                    "You should go to the mountains instead, it's more peaceful.",
+                    "That sounds perfect. Do you have any specific destinations in mind?",
+                    "Have you considered a road trip instead?",
+                    "I don't think you need a vacation right now."
+                ],
+                answer: "That sounds perfect. Do you have any specific destinations in mind?",
+                explanation: "This supports the idea and encourages further conversation. Others are dismissive or redirecting."
             },
             {
                 id: 15,
-                question: "A can do work in 10 days, B in 15 days. They work together for 3 days. What percentage remains?",
-                options: ["30%", "40%", "50%", "60%"],
-                answer: "50%",
-                explanation: "A's rate = 1/10, B's rate = 1/15. Together for 3 days: 3*(1/10+1/15)=3*(3/30+2/30)=3*(5/30)=15/30=1/2 work done. So remaining work = 1/2 = 50%."
+                question: "Person A: \"I'm trying to eat healthier, but I crave sweets all the time.\"<br>Person B: \"That's tough. Have you tried eating fruits instead?\"<br>Person A: \"I've tried, but sometimes I just want something sugary.\"<br>Person B: \"...\"",
+                options: [
+                    "Maybe try making healthy desserts with natural sweeteners.",
+                    "You should just give in and have the sweets you crave.",
+                    "It's important to control those cravings to stay healthy.",
+                    "Why not try eating less sugar every week?"
+                ],
+                answer: "Maybe try making healthy desserts with natural sweeteners.",
+                explanation: "This offers a constructive, balanced solution. Others are either indulgent or overly strict."
+            },
+            {
+                id: 16,
+                question: "Person A: \"I've been considering changing my career path, but I'm not sure if I should take the risk.\"<br>Person B: \"That's a big decision. What's making you think about it?\"<br>Person A: \"I'm not as passionate about my current job anymore.\"<br>Person B: \"...\"",
+                options: [
+                    "It's risky, but sometimes a change can lead to a better future.",
+                    "If you're not happy, it might be time for a change. Follow your passion.",
+                    "Maybe you should try to find a way to rekindle your interest in your current job.",
+                    "Changing careers is always difficult. You might want to stay where you are."
+                ],
+                answer: "If you're not happy, it might be time for a change. Follow your passion.",
+                explanation: "This validates feelings and encourages action. Others discourage or redirect."
+            },
+            {
+                id: 17,
+                question: "Person A: \"I'm thinking of redecorating my living room.\"<br>Person B: \"That's exciting! What kind of style are you thinking of?\"<br>Person A: \"I'm leaning towards a more minimalist look.\"<br>Person B: \"...\"",
+                options: [
+                    "A minimalist style can be really sleek and calming.",
+                    "I think you should add some more vibrant colors to your space.",
+                    "Minimalism is great, but it might feel too empty without some accessories.",
+                    "I love minimalist design! You'll need to be careful not to make it too plain."
+                ],
+                answer: "A minimalist style can be really sleek and calming.",
+                explanation: "This supports Person A’s preference. Others add unsolicited advice or criticism."
+            },
+            {
+                id: 18,
+                question: "Person A: \"I'm starting to run every morning to stay fit, but I'm not sure if I'm doing it right.\"<br>Person B: \"That's great! How are you feeling after your runs?\"<br>Person A: \"A bit sore, but it's a good kind of sore.\"<br>Person B: \"...\"",
+                options: [
+                    "Make sure you stretch before and after your run to prevent injury.",
+                    "You should take it easy for a few days if you're too sore.",
+                    "You need to rest between runs so you don't burn out.",
+                    "I think you're overdoing it. Try running less frequently."
+                ],
+                answer: "Make sure you stretch before and after your run to prevent injury.",
+                explanation: "This provides safety advice. Others assume overexertion or suggest reducing effort."
+            },
+            {
+                id: 19,
+                question: "Person A: \"I think I'm getting sick. I've been feeling really tired lately.\"<br>Person B: \"Oh no, you should rest and drink plenty of fluids. Maybe take it easy for a few days.\"<br>Person A: \"Yeah, I think I need to. I just don't want to miss work.\"<br>Person B: \"Your health is more important. Take care of yourself first.\"<br><br>What advice does Person B give?",
+                options: [
+                    "Work harder to overcome the illness",
+                    "Rest and stay hydrated",
+                    "Keep working despite feeling sick",
+                    "Visit a doctor immediately"
+                ],
+                answer: "Rest and stay hydrated",
+                explanation: "Person B explicitly advises rest and fluids. No mention of doctor or continuing work."
+            },
+            {
+                id: 20,
+                question: "Person A: \"I've been meaning to read more books this year.\"<br>Person B: \"That's a great goal. What kind of books do you like to read?\"<br>Person A: \"I mostly enjoy mystery novels.\"<br>Person B: \"...\"",
+                options: [
+                    "Mystery novels are fun! I can recommend a few that you might like.",
+                    "Why not try a different genre for a change? You might discover something new.",
+                    "I think you should try reading more self-help books this year.",
+                    "You should definitely aim for more challenging books instead."
+                ],
+                answer: "Mystery novels are fun! I can recommend a few that you might like.",
+                explanation: "This supports Person A’s preference. Others suggest unwanted changes."
+            },
+            {
+                id: 21,
+                question: "Person A: \"I'm thinking of joining a yoga class to improve my flexibility.\"<br>Person B: \"That's a great idea! Yoga can be so beneficial.\"<br>Person A: \"I've never done yoga before. I'm a bit nervous.\"<br>Person B: \"...\"",
+                options: [
+                    "It's normal to feel nervous, but the instructors are really helpful.",
+                    "Maybe try something easier like Pilates first.",
+                    "You should definitely try it! It's not as hard as it seems.",
+                    "If you're not sure, I think you should wait."
+                ],
+                answer: "It's normal to feel nervous, but the instructors are really helpful.",
+                explanation: "This acknowledges feelings and reassures. Others discourage or dismiss concerns."
+            },
+            {
+                id: 22,
+                question: "Person A: \"I can't believe I got the job! I'm so excited to start next week.\"<br>Person B: \"That's fantastic! You've worked so hard for this. What will your new role be?\"<br>Person A: \"I'll be managing a team of analysts. It's a big responsibility, but I'm ready for it.\"<br>Person B: \"...\"",
+                options: [
+                    "I'm sure you'll do great. They're lucky to have you!",
+                    "Are you sure you can handle that responsibility?",
+                    "When do you start?",
+                    "What made you decide to apply?"
+                ],
+                answer: "I'm sure you'll do great. They're lucky to have you!",
+                explanation: "This is encouraging and positive. Other options question ability or shift focus."
+            },
+            {
+                id: 23,
+                question: "Person A: \"I'm trying to cut down on my screen time. It's been hard though.\"<br>Person B: \"That can be tough! Have you tried using any apps to limit your screen time?\"<br>Person A: \"Yes, I've tried a few, but I still find myself on my phone a lot.\"<br>Person B: \"...\"",
+                options: [
+                    "Maybe you could set specific times to check your phone.",
+                    "It's hard to break the habit, but you can do it!",
+                    "You should try keeping your phone in another room.",
+                    "I think it would help if you focused on other activities, like reading."
+                ],
+                answer: "Maybe you could set specific times to check your phone.",
+                explanation: "This offers a practical, structured solution. Others are vague or less actionable."
+            },
+            {
+                id: 24,
+                question: "Person A: \"I'm trying to save money for a vacation this year.\"<br>Person B: \"That's a great goal! Do you have a destination in mind?\"<br>Person A: \"I'm thinking of going to Europe.\"<br>Person B: \"...\"",
+                options: [
+                    "Europe is amazing! You'll have such a great time.",
+                    "Europe is expensive, though. Have you looked at cheaper options?",
+                    "Maybe try saving for a local vacation instead, it might be more affordable.",
+                    "That's a big trip! You'll need to save a lot more than you think."
+                ],
+                answer: "Europe is amazing! You'll have such a great time.",
+                explanation: "This encourages excitement and motivation. Others are discouraging or overly cautious."
+            },
+            {
+                id: 25,
+                question: "Person A: \"I'm so glad I finished all my assignments this weekend.\"<br>Person B: \"That's impressive! What did you do to stay so focused?\"<br>Person A: \"I turned off my phone and worked in short bursts.\"<br>Person B: \"...\"",
+                options: [
+                    "That's a smart approach. I should try that next time.",
+                    "You should have taken longer breaks, though.",
+                    "That sounds like a lot of work. I wouldn't be able to focus.",
+                    "Do you think it helped you stay more productive?"
+                ],
+                answer: "That's a smart approach. I should try that next time.",
+                explanation: "This shows appreciation and interest. Others are critical or negative."
+            },
+            {
+                id: 26,
+                question: "Person A: \"I've been feeling really stressed out at work. The deadlines keep piling up.\"<br>Person B: \"I totally understand. Have you tried asking for an extension?\"<br>Person A: \"I haven't yet, but I'm thinking about it.\"<br>Person B: \"...\"",
+                options: [
+                    "It can't hurt to ask. They might give you some extra time.",
+                    "Maybe you should prioritize the most important tasks first.",
+                    "You should try working overtime to catch up.",
+                    "If the deadlines are too much, you should consider looking for another job."
+                ],
+                answer: "It can't hurt to ask. They might give you some extra time.",
+                explanation: "This supports a reasonable solution. Others are extreme or less helpful."
+            },
+            {
+                id: 27,
+                question: "Person A: \"Are you excited about the concert this Friday?\"<br>Person B: \"I am! I've been waiting for months for this. It's going to be amazing!\"<br>Person A: \"I'm not sure. I'm not really into this band.\"<br>Person B: \"Well, I'm sure you'll have a good time anyway.\"<br><br>How does Person A feel about the concert?",
+                options: [
+                    "Enthusiastic",
+                    "Indifferent",
+                    "Excited",
+                    "Uncertain"
+                ],
+                answer: "Indifferent",
+                explanation: "Person A says they are 'not really into this band,' indicating lack of interest or enthusiasm."
+            },
+            {
+                id: 28,
+                question: "Person A: \"I finally finished watching the latest season of that show you recommended!\"<br>Person B: \"No way! What did you think of the ending?\"<br>Person A: \"I didn't see it coming at all. It was such a twist!\"<br>Person B: \"...\"",
+                options: [
+                    "I didn't really enjoy the ending. It was too predictable for me.",
+                    "The twist was insane, wasn't it? I never saw that coming!",
+                    "I knew you'd love it! What was your favourite part?",
+                    "I don't think the twist made much sense. Did it for you?"
+                ],
+                answer: "The twist was insane, wasn't it? I never saw that coming!",
+                explanation: "This matches excitement and continues the conversation. Others contradict or dismiss."
+            },
+            {
+                id: 29,
+                question: "Person A: \"I've been feeling really down lately. Everything seems so overwhelming.\"<br>Person B: \"I'm sorry to hear that. Have you been able to talk to anyone about it?\"<br>Person A: \"I haven't yet, but I think I should.\"<br>Person B: \"...\"",
+                options: [
+                    "I think you're just stressed. You'll feel better soon.",
+                    "Maybe you just need a vacation to get away from everything.",
+                    "You should try a new hobby, that might cheer you up.",
+                    "Talking to someone can really help. You don't have to carry it alone."
+                ],
+                answer: "Talking to someone can really help. You don't have to carry it alone.",
+                explanation: "This directly supports the idea of seeking help. Others offer simplistic fixes."
+            },
+            {
+                id: 30,
+                question: "Person A: \"I've been feeling unmotivated to work out lately.\"<br>Person B: \"That happens. Have you tried setting some small goals to help get you back on track?\"<br>Person A: \"I haven't, but it sounds like a good idea.\"<br>Person B: \"...\"",
+                options: [
+                    "Try making your workouts more fun, like joining a group class.",
+                    "Maybe you should take a break and start again later when you feel more motivated.",
+                    "Start with a simple goal, like working out three times a week.",
+                    "Set a goal for next week to work out every day. That should push you."
+                ],
+                answer: "Start with a simple goal, like working out three times a week.",
+                explanation: "This is realistic and actionable. Others are either too extreme or delay action."
+            },
+            {
+                id: 31,
+                question: "Person A: \"I'm thinking of getting a pet, maybe a dog. Do you think it's a good idea?\"<br>Person B: \"Dogs are great! They're loyal and loving.\"<br>Person A: \"I'm just worried about the responsibility of taking care of one.\"<br>Person B: \"...\"",
+                options: [
+                    "You could get a dog, but make sure you're ready for the long-term commitment.",
+                    "Maybe start with a smaller pet, like a hamster or a cat.",
+                    "It can be a lot of work, but the love you get in return is worth it.",
+                    "I think a dog is too much for you right now."
+                ],
+                answer: "It can be a lot of work, but the love you get in return is worth it.",
+                explanation: "This acknowledges concern while focusing on the positive. Others discourage or redirect."
+            },
+            {
+                id: 32,
+                question: "Person A: \"I'm so excited about the concert this weekend. It's going to be amazing!\"<br>Person B: \"I can't wait either! Do you have a favorite song you're hoping to hear?\"<br>Person A: \"I'm really hoping they play their new hit song.\"<br>Person B: \"...\"",
+                options: [
+                    "I hope they do! It's been so popular lately.",
+                    "I'm sure they'll play their most famous songs instead.",
+                    "It might be too new to make the setlist, though.",
+                    "I've heard they're mixing things up this time, so we'll see."
+                ],
+                answer: "I hope they do! It's been so popular lately.",
+                explanation: "This shares excitement and supports anticipation. Others introduce doubt."
+            },
+            {
+                id: 33,
+                question: "Person A: \"I've been feeling like I'm stuck in a routine. I need to make some changes.\"<br>Person B: \"Sometimes breaking the routine can help bring a fresh perspective.\"<br>Person A: \"I don't know where to start, though.\"<br>Person B: \"...\"",
+                options: [
+                    "Maybe take a day off and relax. You might get new ideas.",
+                    "Start by changing one small thing each day. It'll help you feel less stuck.",
+                    "Sometimes a change of scenery can help. How about a mini-vacation?",
+                    "Try something you've always wanted to do, even if it's small."
+                ],
+                answer: "Start by changing one small thing each day. It'll help you feel less stuck.",
+                explanation: "This offers a practical, manageable step. Others are more general."
+            },
+            {
+                id: 34,
+                question: "Person A: \"I can't decide if I should move to a bigger apartment.\"<br>Person B: \"A bigger apartment sounds nice, but are you sure it's necessary?\"<br>Person A: \"I think it might be, but it would also mean higher rent.\"<br>Person B: \"...\"",
+                options: [
+                    "Maybe you should calculate how much extra space you actually need.",
+                    "If you can afford it, go for it. More space can be really freeing.",
+                    "I think you should stay where you are and save the money.",
+                    "You could find a cheaper place with more space if you look carefully."
+                ],
+                answer: "Maybe you should calculate how much extra space you actually need.",
+                explanation: "This encourages rational decision-making. Others are directive or financial assumptions."
+            },
+            {
+                id: 35,
+                question: "Person A: \"I can't decide if I should take the job offer in another city.\"<br>Person B: \"That's a big decision! What are the pros and cons?\"<br>Person A: \"The salary is higher, but I'd have to leave all my friends and family.\"<br>Person B: \"...\"",
+                options: [
+                    "You should definitely take the job; you can make new friends.",
+                    "It sounds like you need to think about what matters most to you.",
+                    "Maybe you should try visiting the city first before making a decision.",
+                    "Leaving your friends and family sounds like too much of a sacrifice."
+                ],
+                answer: "It sounds like you need to think about what matters most to you.",
+                explanation: "This promotes reflection. Others are biased or directive."
+            },
+            {
+                id: 36,
+                question: "Person A: \"I'm considering taking a cooking class. I think it could be fun!\"<br>Person B: \"That sounds like a great idea! What kind of cooking are you interested in?\"<br>Person A: \"I'm thinking about learning to cook Italian food.\"<br>Person B: \"...\"",
+                options: [
+                    "I think you'd enjoy Asian cuisine more, though.",
+                    "Italian food is delicious! You'll love learning how to make pasta from scratch.",
+                    "Italian food can be complicated. Are you sure you want to start there?",
+                    "You could try baking instead. It's a lot of fun too."
+                ],
+                answer: "Italian food is delicious! You'll love learning how to make pasta from scratch.",
+                explanation: "This supports and encourages. Others discourage or redirect."
+            },
+            {
+                id: 37,
+                question: "Person A: \"I've been trying to find a new apartment, but it's so difficult. Everything is either too expensive or too small.\"<br>Person B: \"That's frustrating. Have you considered looking in a different neighborhood?\"<br>Person A: \"I've thought about it, but I really want to stay close to work.\"<br>Person B: \"...\"",
+                options: [
+                    "Maybe you should widen your search area.",
+                    "Have you tried contacting a real estate agent?",
+                    "I understand. It's hard to balance both factors.",
+                    "You should be able to find something eventually."
+                ],
+                answer: "I understand. It's hard to balance both factors.",
+                explanation: "This shows empathy. Others offer solutions without acknowledging the struggle."
+            },
+            {
+                id: 38,
+                question: "Person A: \"I've been feeling so tired lately, I can barely keep my eyes open.\"<br>Person B: \"Maybe you're not getting enough sleep. Have you tried going to bed earlier?\"<br>Person A: \"I've been trying, but it's hard with all the late-night work.\"<br>Person B: \"...\"",
+                options: [
+                    "You should really prioritize your sleep, even if it means staying up less.",
+                    "Maybe you need to cut back on your caffeine intake.",
+                    "It sounds like you need a break, are you planning a vacation?",
+                    "You should try sleeping during the day if you're too busy at night."
+                ],
+                answer: "You should really prioritize your sleep, even if it means staying up less.",
+                explanation: "This gives practical, immediate advice. Others are less relevant."
+            },
+            {
+                id: 39,
+                question: "Person A: \"I just finished reading that new mystery novel you recommended. The plot twist at the end was incredible!\"<br>Person B: \"I knew you'd love it! What did you think of the main character?\"<br>Person A: \"I wasn't sure about him at first, but he grew on me. His backstory was so interesting.\"<br>Person B: \"...\"",
+                options: [
+                    "I'm glad you liked it! The ending was definitely unexpected.",
+                    "I didn't like that character at all. He seemed too flawed.",
+                    "The author's writing style was amazing, wasn't it?",
+                    "You should read the sequel. It's even better."
+                ],
+                answer: "I'm glad you liked it! The ending was definitely unexpected.",
+                explanation: "This responds naturally to the conversation. Others are negative or pushy."
+            },
+            {
+                id: 40,
+                question: "Person A: \"I've been so busy with work lately, I haven't had much time for friends.\"<br>Person B: \"That's tough. Have you had time to relax at least?\"<br>Person A: \"Not really. I've been feeling a bit stressed.\"<br>Person B: \"...\"",
+                options: [
+                    "Maybe you should plan a weekend getaway to unwind.",
+                    "I understand. Have you thought about doing some meditation?",
+                    "You need to make time for yourself, even if it's just for a few hours.",
+                    "It sounds like you're working too much. You should take a break."
+                ],
+                answer: "You need to make time for yourself, even if it's just for a few hours.",
+                explanation: "This gives balanced, actionable advice. Others are more extreme."
             }
-            // Add the remaining questions up to 40...
         ];
 
         // DOM elements
@@ -505,11 +820,10 @@
         const searchInput = document.getElementById('searchInput');
         const searchBtn = document.getElementById('searchBtn');
         const filterBtns = document.querySelectorAll('.filter-btn');
-        
+
         // Display questions
         function displayQuestions(questionsToDisplay) {
             questionsContainer.innerHTML = '';
-            
             if (questionsToDisplay.length === 0) {
                 questionsContainer.innerHTML = `
                     <div class="no-results">
@@ -520,12 +834,10 @@
                 `;
                 return;
             }
-            
             questionsToDisplay.forEach(q => {
                 const optionsHtml = q.options.length > 0 
                     ? `<ul class="options-list">${q.options.map(opt => `<li>${opt}</li>`).join('')}</ul>` 
                     : '';
-                
                 const questionCard = document.createElement('div');
                 questionCard.className = 'question-card';
                 questionCard.innerHTML = `
@@ -546,51 +858,44 @@
                         </div>
                     </div>
                 `;
-                
                 questionsContainer.appendChild(questionCard);
             });
-            
-            // Add event listeners to show answer buttons
+
+            // Add event listeners to show/hide buttons
             document.querySelectorAll('.show-answer-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const answer = this.nextElementSibling;
                     const explanation = answer.nextElementSibling;
-                    
-                    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-                    explanation.style.display = explanation.style.display === 'block' ? 'none' : 'block';
-                    
-                    this.innerHTML = answer.style.display === 'block' 
-                        ? '<i class="fas fa-eye-slash"></i> Hide Answer' 
-                        : '<i class="fas fa-lightbulb"></i> Show Answer';
+                    const isShowing = answer.style.display === 'block';
+                    answer.style.display = isShowing ? 'none' : 'block';
+                    explanation.style.display = isShowing ? 'none' : 'block';
+                    this.innerHTML = isShowing 
+                        ? '<i class="fas fa-lightbulb"></i> Show Answer' 
+                        : '<i class="fas fa-eye-slash"></i> Hide Answer';
                 });
             });
         }
-        
+
         // Filter questions based on search and category
         function filterQuestions() {
             const searchText = searchInput.value.toLowerCase();
             const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
-            
             const filteredQuestions = questions.filter(q => {
                 const matchesSearch = q.question.toLowerCase().includes(searchText) || 
                                      q.answer.toLowerCase().includes(searchText) ||
                                      q.options.some(opt => opt.toLowerCase().includes(searchText)) ||
                                      q.explanation.toLowerCase().includes(searchText);
-                
                 const matchesFilter = activeFilter === 'all' || 
                                     (activeFilter === 'answered' && q.answer) ||
                                     (activeFilter === 'unanswered' && !q.answer);
-                
                 return matchesSearch && matchesFilter;
             });
-            
             displayQuestions(filteredQuestions);
         }
-        
+
         // Event listeners
         searchInput.addEventListener('input', filterQuestions);
         searchBtn.addEventListener('click', filterQuestions);
-        
         filterBtns.forEach(btn => {
             btn.addEventListener('click', function() {
                 filterBtns.forEach(b => b.classList.remove('active'));
@@ -598,7 +903,7 @@
                 filterQuestions();
             });
         });
-        
+
         // Initial display
         displayQuestions(questions);
     </script>
