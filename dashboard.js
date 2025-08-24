@@ -9,7 +9,7 @@ const testsConfig = [
         difficulty: "Intermediate",
         categories: ["Spelling", "Vocabulary", "Grammar", "Idioms"],
         file: "test_1.html",
-        lastUpdated: "2024-01-15"
+        lastUpdated: "2025-08-24"
     },
     {
         id: 2,
@@ -20,19 +20,19 @@ const testsConfig = [
         difficulty: "Advanced",
         categories: ["Math Problems", "Grammar", "Logic"],
         file: "test_2.html",
-        lastUpdated: "2024-01-20"
+        lastUpdated: "2025-08-23"
     },
-    // {
-    //     id: 3,
-    //     title: "Basic Grammar Fundamentals",
-    //     description: "Basic grammar test perfect for beginners and intermediate learners.",
-    //     questions: 30,
-    //     timeLimit: 45,
-    //     difficulty: "Beginner",
-    //     categories: ["Grammar", "Basic"],
-    //     file: "test_3.html",
-    //     lastUpdated: "2024-01-25"
-    // },
+    {
+        id: 3,
+        title: "Basic Grammar Fundamentals",
+        description: "Basic grammar test perfect for beginners and intermediate learners.",
+        questions: 40,
+        timeLimit: 45,
+        difficulty: "Beginner",
+        categories: ["Grammar", "Basic"],
+        file: "test_3.html",
+        lastUpdated: "2025-08-24"
+    },
     // {
     //     id: 4,
     //     title: "Vocabulary Mastery Test",
