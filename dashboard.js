@@ -24,7 +24,7 @@ const testsConfig = [
     },
     {
         id: 3,
-        title: "Basic Grammar Fundamentals",
+        title: "Engineering-26-V-Test 1",
         description: "Basic grammar test perfect for beginners and intermediate learners.",
         questions: 40,
         timeLimit: 45,
@@ -191,3 +191,4 @@ document.addEventListener('DOMContentLoaded', function() {
     const testCards = document.querySelectorAll('.test-card');
     testCards.forEach(card => observer.observe(card));
 });
+
