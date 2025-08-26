@@ -33,17 +33,17 @@ const testsConfig = [
         file: "test_3.html",
         lastUpdated: "2025-08-24"
     },
-    // {
-    //     id: 4,
-    //     title: "Vocabulary Mastery Test",
-    //     description: "Comprehensive vocabulary test covering synonyms, antonyms, and word meanings.",
-    //     questions: 35,
-    //     timeLimit: 50,
-    //     difficulty: "Intermediate",
-    //     categories: ["Vocabulary", "Synonyms", "Antonyms"],
-    //     file: "test_4.html",
-    //     lastUpdated: "2024-01-30"
-    // },
+    {
+        id: 4,
+        title: "Vocabulary Mastery Test",
+        description: "Comprehensive vocabulary test covering synonyms, antonyms, and word meanings.",
+        questions: 35,
+        timeLimit: 50,
+        difficulty: "Intermediate",
+        categories: ["Vocabulary", "Synonyms", "Antonyms"],
+        file: "Test_3.html",
+        lastUpdated: "2024-01-30"
+    },
     // {
     //     id: 5,
     //     title: "Idioms and Phrases Test",
@@ -191,5 +191,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const testCards = document.querySelectorAll('.test-card');
     testCards.forEach(card => observer.observe(card));
 });
+
 
 
