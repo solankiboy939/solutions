@@ -3,28 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NPTEL Deep Learning - IIT Ropar - Complete Answers</title>
+    <title>NPTEL Deep Learning - Week 6 Assignment Solutions</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
     <style>
-        .question-card {
+        .question-container {
             transition: all 0.3s ease;
             border-left: 4px solid #3b82f6;
         }
-        .question-card:hover {
+        .question-container:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-        .answer-highlight {
-            background: linear-gradient(120deg, #e0f2fe 0%, #bae6fd 100%);
-            border-left: 4px solid #0ea5e9;
-        }
-        .week-navigation a {
-            transition: all 0.2s ease;
-        }
-        .week-navigation a:hover {
-            background-color: #3b82f6;
-            color: white !important;
         }
         .correct-answer {
             background-color: #f0fdf4;
@@ -33,6 +22,14 @@
         .section-header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+        }
+        .option-correct {
+            border-left: 4px solid #22c55e;
+            background-color: #f0fdf4;
+        }
+        .option-incorrect {
+            border-left: 4px solid #ef4444;
+            background-color: #fef2f2;
         }
     </style>
 </head>
@@ -44,26 +41,26 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain"><path d="M12 6.5c2.5 0 4.5 2 4.5 4.5S14.5 15.5 12 15.5 7.5 13.5 7.5 11s2-4.5 4.5-4.5z"/><path d="M12 6.5V3"/><path d="M12 15.5v3"/><path d="M6.5 12H3"/><path d="M17.5 12h3"/><path d="M7 7l2 2"/><path d="M15 15l2 2"/><path d="M15 7l-2 2"/><path d="M7 15l2-2"/></svg>
                 <div>
                     <h1 class="text-3xl font-bold">NPTEL Deep Learning</h1>
-                    <p class="text-blue-200">IIT Ropar - Complete Assignment Answers</p>
+                    <p class="text-blue-200">IIT Ropar - Week 6 Assignment Solutions</p>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
                 <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
                     <div class="flex items-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                        <span>27+ Comprehensive Questions</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                        <span>27 Questions Solved</span>
                     </div>
                 </div>
                 <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
                     <div class="flex items-center space-x-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89l3.536 3.535a2 2 0 0 1-2.829 2.828l-3.535-3.536a10 10 0 0 1-6.364 2.277 10 10 0 0 1-7.071-2.929 2 2 0 0 1 0-2.828l3.536-3.536"/><path d="M8.523 12.89l-3.536 3.535a2 2 0 0 0 2.829 2.828l3.535-3.536a10 10 0 0 0 6.364 2.277 10 10 0 0 0 7.071-2.929 2 2 0 0 0 0-2.828l-3.536-3.536"/></svg>
-                        <span>Week 1-6 Complete Solutions</span>
+                        <span>Expert Verified Answers</span>
                     </div>
                 </div>
                 <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
                     <div class="flex items-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-megaphone"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
-                        <span>Expert Verified Answers</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-check"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="9" x2="9" y1="9" y2="9"/><line x1="12" x2="12" y1="9" y2="9"/><line x1="15" x2="15" y1="9" y2="9"/><line x1="9" x2="9" y1="14" y2="14"/><line x1="12" x2="12" y1="14" y2="14"/><line x1="15" x2="15" y1="14" y2="14"/><path d="M9 19h6"/><path d="m9 16 3 3 3-3"/></svg>
+                        <span>Assignment Due: 2025-09-03</span>
                     </div>
                 </div>
             </div>
@@ -71,26 +68,26 @@
     </header>
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-md week-navigation">
+    <nav class="bg-white shadow-md">
         <div class="container mx-auto px-6">
             <div class="flex space-x-1 py-4 overflow-x-auto">
-                <a href="#week1" class="flex-shrink-0 px-6 py-3 text-center text-gray-700 font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
-                    Week 1
+                <a href="#q1-5" class="px-6 py-3 text-center text-gray-700 font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
+                    Questions 1-5
                 </a>
-                <a href="#week2" class="flex-shrink-0 px-6 py-3 text-center text-gray-700 font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
-                    Week 2
+                <a href="#q6-11" class="px-6 py-3 text-center text-gray-700 font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
+                    Questions 6-11
                 </a>
-                <a href="#week3" class="flex-shrink-0 px-6 py-3 text-center text-gray-700 font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
-                    Week 3
+                <a href="#q12-14" class="px-6 py-3 text-center text-gray-700 font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
+                    Questions 12-14
                 </a>
-                <a href="#week4" class="flex-shrink-0 px-6 py-3 text-center text-gray-700 font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
-                    Week 4
+                <a href="#q15-17" class="px-6 py-3 text-center text-gray-700 font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
+                    Questions 15-17
                 </a>
-                <a href="#week5" class="flex-shrink-0 px-6 py-3 text-center text-gray-700 font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
-                    Week 5
+                <a href="#q18-24" class="px-6 py-3 text-center text-gray-700 font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
+                    Questions 18-24
                 </a>
-                <a href="#week6" class="flex-shrink-0 px-6 py-3 text-center text-gray-700 font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
-                    Week 6
+                <a href="#q25-27" class="px-6 py-3 text-center text-gray-700 font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
+                    Questions 25-27
                 </a>
             </div>
         </div>
@@ -99,476 +96,161 @@
     <!-- Main Content -->
     <main class="container mx-auto px-6 py-8">
         
-        <!-- Week 6 Section -->
-        <section id="week6" class="mb-12 scroll-mt-20">
+        <!-- Section 1: Questions 1-5 -->
+        <section id="q1-5" class="mb-12 scroll-mt-20">
             <div class="section-header rounded-t-lg p-6 mb-6">
                 <h2 class="text-3xl font-bold flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days mr-3"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
-                    Week 6: Autoencoders
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder mr-3"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9L10 3.9A2 2 0 0 0 8.5 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
+                    Section 1: Autoencoder Architectures (Q1-5)
                 </h2>
-                <p class="text-blue-100 mt-2">Complete Assignment Solutions</p>
             </div>
 
-            <div class="space-y-6">
-                <!-- Question 1 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">1</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">You're working in a healthcare startup building a compression system for chest X-ray images using autoencoders. Your team has proposed the following 4 architectures for evaluation. Each diagram shows the number of neurons in the input layer, hidden layer, and output layer. Your job is to choose the architecture(s) that will best compress the input while still allowing reasonable reconstruction. Based on the diagrams shown, identify which architecture(s) represent an undercomplete autoencoder.</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> A and C
-                                    </div>
-                                    <div class="text-sm text-gray-600 mt-2">
-                                        <strong>Explanation:</strong> An undercomplete autoencoder has a hidden layer smaller than the input layer, forcing the network to learn a compressed representation. Architectures A and C have hidden layers smaller than their input layers, making them undercomplete.
-                                    </div>
+            <!-- Question 1 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">1</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">You're working in a healthcare startup building a compression system for chest X-ray images using autoencoders. Your team has proposed the following 4 architectures for evaluation. Each diagram shows the number of neurons in the input layer, hidden layer, and output layer. Your job is to choose the architecture(s) that will best compress the input while still allowing reasonable reconstruction. Based on the diagrams shown, identify which architecture(s) represent an undercomplete autoencoder.</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q1-a" name="q1" class="mr-2">
+                                    <label for="q1-a">B and D</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q1-b" name="q1" checked class="mr-2">
+                                    <label for="q1-b"><strong>A and C</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q1-c" name="q1" class="mr-2">
+                                    <label for="q1-c">A, C, and D</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q1-d" name="q1" class="mr-2">
+                                    <label for="q1-d">Only A</label>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-sm text-gray-600">
+                                <strong>Explanation:</strong> An undercomplete autoencoder has a hidden layer smaller than the input layer, forcing the network to learn a compressed representation. Architectures A and C have hidden layers smaller than their input layers, making them undercomplete.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">2</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Which of the following best describes the role of the hidden representation in this autoencoder setup?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q2-a" name="q2" class="mr-2">
+                                    <label for="q2-a">It stores an exact copy of the input data.</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q2-b" name="q2" checked class="mr-2">
+                                    <label for="q2-b"><strong>It captures a lower or higher-dimensional encoding useful for reconstruction.</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q2-c" name="q2" class="mr-2">
+                                    <label for="q2-c">It applies label information to compress data.</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q2-d" name="q2" class="mr-2">
+                                    <label for="q2-d">It directly computes reconstruction loss.</label>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Question 2 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">2</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Which of the following best describes the role of the hidden representation in this autoencoder setup?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> It captures a lower or higher-dimensional encoding useful for reconstruction.
-                                    </div>
+            <!-- Question 3 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">3</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">What can be said about Model A's architecture in this scenario?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="checkbox" id="q3-a" class="mr-2">
+                                    <label for="q3-a">It is an overcomplete autoencoder.</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="checkbox" id="q3-b" checked class="mr-2">
+                                    <label for="q3-b"><strong>It is an undercomplete autoencoder.</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="checkbox" id="q3-c" class="mr-2">
+                                    <label for="q3-c">It risks learning an identity function.</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="checkbox" id="q3-d" checked class="mr-2">
+                                    <label for="q3-d"><strong>It compresses the input data to extract meaningful features.</strong></label>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Question 3 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">3</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">What can be said about Model A's architecture in this scenario?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> It is an undercomplete autoencoder.<br>It compresses the input data to extract meaningful features.
-                                    </div>
+            <!-- Question 4 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">4</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">What is the major risk of using Model B in this situation?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q4-a" name="q4" class="mr-2">
+                                    <label for="q4-a">It might fail to train due to insufficient parameters.</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q4-b" name="q4" class="mr-2">
+                                    <label for="q4-b">It enforces sparsity and loses data fidelity.</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q4-c" name="q4" class="mr-2">
+                                    <label for="q4-c">It performs better due to higher capacity.</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q4-d" name="q4" checked class="mr-2">
+                                    <label for="q4-d"><strong>It could trivially copy input to output without learning meaningful representations.</strong></label>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Question 4 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">4</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">What is the major risk of using Model B in this situation?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> It could trivially copy input to output without learning meaningful representations.
-                                    </div>
+            <!-- Question 5 -->
+            <div class="bg-white rounded-lg shadow-md question-container">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">5</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Suppose the autoencoder trained on normal sensor data starts showing high reconstruction error on new input data. What does this indicate?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q5-a" name="q5" class="mr-2">
+                                    <label for="q5-a">The autoencoder has overfitted.</label>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 5 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">5</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Suppose the autoencoder trained on normal sensor data starts showing high reconstruction error on new input data. What does this indicate?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> The new input is likely anomalous or different from training distribution.
-                                    </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q5-b" name="q5" class="mr-2">
+                                    <label for="q5-b">The sensors are working perfectly.</label>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 6 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">6</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Which decoder activation function(f) is the most suitable for the above input setting?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> sigmoid
-                                    </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q5-c" name="q5" checked class="mr-2">
+                                    <label for="q5-c"><strong>The new input is likely anomalous or different from training distribution.</strong></label>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 7 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">7</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Which loss function should the engineer use for training the above autoencoder?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> L(θ)= −∑[x<sub>ij</sub> log(x̂<sub>ij</sub>) + (1 − x<sub>ij</sub>) log(1 − x̂<sub>ij</sub>)]
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 8 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">8</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Why would using squared error loss with sigmoid decoder and binary input be suboptimal?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> It assumes Gaussian distribution, which mismatches binary input assumptions.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 9 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">9</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Which decoder activation function is most suitable for the given input scenario?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> linear
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 10 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">10</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Suppose the inputs are normalized but still real-valued. Which loss function best suits the model's objective?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> L(θ)= ∑(x̂<sub>ij</sub> − x<sub>ij</sub>)²
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 11 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">11</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Why is binary cross-entropy loss generally not appropriate when training an autoencoder on real-valued input data?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> It assumes binary targets in[0,1], which doesn’t match real-valued ground truth.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 12 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">12</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Under the above conditions, what can be said about the representations learned by both methods?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> PCA and the linear autoencoder will learn identical subspaces
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 13 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">13</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">If the dataset is found to lie on a nonlinear manifold, which approach would likely perform better for compression and why?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> Nonlinear autoencoder, because it can learn nonlinear mappings
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 14 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">14</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">The team now wants to visualize the compressed 2D representation of the data. Researcher A uses PCA with 2 components, while Researcher B trains a nonlinear autoencoder with a 2- dimensional hidden layer. Which of the following is true?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> The autoencoder may learn better separability due to nonlinearity
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 15 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">15</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Why is this trivial copying behavior a problem in overcomplete autoencoders?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> It results in representations that don't generalize
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 16 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">16</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Which of the following regularization strategies can be used to prevent trivial identity mappings in such overcomplete architectures?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> Adding noise to inputs<br>Penalizing activations to enforce sparsity<br>Penalizing the Jacobian of hidden activations
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 17 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">17</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">What kind of autoencoder is being used in this scenario?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> Denoising Autoencoder
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 18 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">18</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">What is the dimension of the input vector given to the autoencoder?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> 16384
-                                    </div>
-                                    <div class="text-sm text-gray-600 mt-2">
-                                        <strong>Explanation:</strong> 128 × 128 = 16384 pixels
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 19 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">19</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Which of the following statements correctly compares the regular and denoising autoencoder approaches for this medical image task?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> Denoising autoencoder explicitly learns to remove noise and is better suited for this application
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 20 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">20</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">An engineer builds an autoencoder for real-valued inputs but uses a sigmoid decoder activation and binary cross-entropy loss. What issue might arise from this setup?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> There will be a mismatch between output range and data distribution
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 21 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">21</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Which of the following loss functions encourages sparsity in hidden unit activations?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> L(θ)= ∑∥x<sub>i</sub> − x̂<sub>i</sub>∥² + λ∑KL(ρ∥ρ̂<sub>j</sub>)
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 22 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">22</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">What is the main idea behind a Sparse Autoencoder?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> It restricts most hidden units to be inactive(close to 0)
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 23 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">23</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Which activation pattern is most likely from a well-trained sparse autoencoder?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> Only a small subset of hidden units fire for each input
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 24 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">24</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">What is the key regularization objective of a Contractive Autoencoder?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> Penalize the sensitivity of the encoder to small input changes
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 25 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">25</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Match the Autoencoder variant with the application it is best suited for:</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> A–3, B–1, C–2, D–4
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 26 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">26</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">In a Contractive Autoencoder, the added penalty on the Jacobian of hidden activations with respect to the input encourages which of the following behaviors?</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> Hidden representation becomes invariant to small input perturbations
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 27 -->
-                <div class="bg-white rounded-lg shadow-md question-card">
-                    <div class="p-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">27</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Match the following autoencoder setups to their respective types:</h3>
-                                <div class="mt-4 space-y-2">
-                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
-                                        <strong class="text-blue-700">Answer:</strong> A–1, B–4, C–3, D–2
-                                    </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q5-d" name="q5" class="mr-2">
+                                    <label for="q5-d">The loss function needs to be changed.</label>
                                 </div>
                             </div>
                         </div>
@@ -577,88 +259,716 @@
             </div>
         </section>
 
-        <!-- Week 1-5 Placeholder Sections -->
-        <section id="week1" class="mb-12 scroll-mt-20">
-            <div class="bg-gradient-to-r from-green-600 to-teal-600 rounded-t-lg p-6 mb-6">
-                <h2 class="text-3xl font-bold flex items-center text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days mr-3"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
-                    Week 1: Neural Networks Basics
+        <!-- Section 2: Questions 6-11 -->
+        <section id="q6-11" class="mb-12 scroll-mt-20">
+            <div class="section-header rounded-t-lg p-6 mb-6">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-binary mr-3"><circle cx="10" cy="10" r="7"/><path d="m14.5 4.5 5.5 5.5-5.5 5.5"/><circle cx="15" cy="10" r="1"/></svg>
+                    Section 2: Binary Data Autoencoders (Q6-11)
                 </h2>
-                <p class="text-green-100 mt-2">Solutions coming soon</p>
             </div>
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <div class="text-center py-12">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock mx-auto mb-4 text-gray-400"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <h3 class="text-xl font-semibold text-gray-600 mb-2">Week 1 Solutions</h3>
-                    <p class="text-gray-500">Complete solutions for Week 1 will be available soon. Check back later!</p>
+
+            <!-- Question 6 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">6</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Which decoder activation function(f) is the most suitable for the above input setting?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q6-a" name="q6" class="mr-2">
+                                    <label for="q6-a">tanh</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q6-b" name="q6" class="mr-2">
+                                    <label for="q6-b">linear</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q6-c" name="q6" checked class="mr-2">
+                                    <label for="q6-c"><strong>sigmoid</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q6-d" name="q6" class="mr-2">
+                                    <label for="q6-d">ReLU</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">7</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Which loss function should the engineer use for training the above autoencoder?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q7-a" name="q7" class="mr-2">
+                                    <label for="q7-a">L(θ)= ∥∑<sup>m</sup><sub>i=1</sub> x̂<sub>i</sub> - x<sub>i</sub>∥²<sub>2</sub></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q7-b" name="q7" checked class="mr-2">
+                                    <label for="q7-b"><strong>L(θ)= -∑<sup>m</sup><sub>i=1</sub>∑<sup>n</sup><sub>j=1</sub> [x<sub>ij</sub> log(x̂<sub>ij</sub>) + (1 - x<sub>ij</sub>) log(1 - x̂<sub>ij</sub>)]</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q7-c" name="q7" class="mr-2">
+                                    <label for="q7-c">L(θ)= KL(x<sub>i</sub>∥x̂<sub>i</sub>)</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q7-d" name="q7" class="mr-2">
+                                    <label for="q7-d">L(θ)= ∑<sup>m</sup><sub>i=1</sub>|x̂<sub>i</sub> - x<sub>i</sub>|</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">8</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Why would using squared error loss with sigmoid decoder and binary input be suboptimal?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q8-a" name="q8" class="mr-2">
+                                    <label for="q8-a">It cannot be used with sigmoid.</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q8-b" name="q8" class="mr-2">
+                                    <label for="q8-b">It gives poor gradient signals for binary classification tasks.</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q8-c" name="q8" checked class="mr-2">
+                                    <label for="q8-c"><strong>It assumes Gaussian distribution, which mismatches binary input assumptions.</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q8-d" name="q8" class="mr-2">
+                                    <label for="q8-d">It leads to unstable training with sigmoid output.</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">9</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Which decoder activation function is most suitable for the given input scenario?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q9-a" name="q9" class="mr-2">
+                                    <label for="q9-a">tanh</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q9-b" name="q9" checked class="mr-2">
+                                    <label for="q9-b"><strong>linear</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q9-c" name="q9" class="mr-2">
+                                    <label for="q9-c">sigmoid</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q9-d" name="q9" class="mr-2">
+                                    <label for="q9-d">ReLU</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">10</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Suppose the inputs are normalized but still real-valued. Which loss function best suits the model's objective?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q10-a" name="q10" checked class="mr-2">
+                                    <label for="q10-a"><strong>L(θ)= ∑<sup>m</sup><sub>i=1</sub>∑<sup>n</sup><sub>j=1</sub>(x̂<sub>ij</sub> - x<sub>ij</sub>)²</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q10-b" name="q10" class="mr-2">
+                                    <label for="q10-b">L(θ)= -∑<sup>m</sup><sub>i=1</sub>∑<sup>n</sup><sub>j=1</sub> [x<sub>ij</sub> log(x̂<sub>ij</sub>) + (1 - x<sub>ij</sub>) log(1 - x̂<sub>ij</sub>)]</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q10-c" name="q10" class="mr-2">
+                                    <label for="q10-c">L(θ)= KL(x<sub>i</sub>∥x̂<sub>i</sub>)</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q10-d" name="q10" class="mr-2">
+                                    <label for="q10-d">L(θ)= ∑<sup>m</sup><sub>i=1</sub>|x̂<sub>i</sub> - x<sub>i</sub>|</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="bg-white rounded-lg shadow-md question-container">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">11</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Why is binary cross-entropy loss generally not appropriate when training an autoencoder on real-valued input data?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q11-a" name="q11" class="mr-2">
+                                    <label for="q11-a">It requires outputs to be strictly positive.</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q11-b" name="q11" checked class="mr-2">
+                                    <label for="q11-b"><strong>It assumes binary targets in[0,1], which doesn’t match real-valued ground truth.</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q11-c" name="q11" class="mr-2">
+                                    <label for="q11-c">It leads to more accurate reconstructions for continuous data.</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q11-d" name="q11" class="mr-2">
+                                    <label for="q11-d">It is equivalent to squared loss when using sigmoid outputs.</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="week2" class="mb-12 scroll-mt-20">
-            <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-t-lg p-6 mb-6">
-                <h2 class="text-3xl font-bold flex items-center text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days mr-3"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
-                    Week 2: Deep Learning Fundamentals
+        <!-- Section 3: Questions 12-14 -->
+        <section id="q12-14" class="mb-12 scroll-mt-20">
+            <div class="section-header rounded-t-lg p-6 mb-6">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pie-chart mr-3"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+                    Section 3: PCA vs Autoencoders (Q12-14)
                 </h2>
-                <p class="text-purple-100 mt-2">Solutions coming soon</p>
             </div>
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <div class="text-center py-12">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock mx-auto mb-4 text-gray-400"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <h3 class="text-xl font-semibold text-gray-600 mb-2">Week 2 Solutions</h3>
-                    <p class="text-gray-500">Complete solutions for Week 2 will be available soon. Check back later!</p>
+
+            <!-- Question 12 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">12</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Under the above conditions, what can be said about the representations learned by both methods?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q12-a" name="q12" checked class="mr-2">
+                                    <label for="q12-a"><strong>PCA and the linear autoencoder will learn identical subspaces</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q12-b" name="q12" class="mr-2">
+                                    <label for="q12-b">Autoencoder will learn more nonlinear features</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q12-c" name="q12" class="mr-2">
+                                    <label for="q12-c">PCA will fail due to lack of labels</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q12-d" name="q12" class="mr-2">
+                                    <label for="q12-d">Autoencoder needs more computation due to gradient descent</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 13 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">13</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">If the dataset is found to lie on a nonlinear manifold, which approach would likely perform better for compression and why?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q13-a" name="q13" class="mr-2">
+                                    <label for="q13-a">PCA, because it captures all the variance</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q13-b" name="q13" class="mr-2">
+                                    <label for="q13-b">Linear autoencoder, because it approximates PCA</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q13-c" name="q13" checked class="mr-2">
+                                    <label for="q13-c"><strong>Nonlinear autoencoder, because it can learn nonlinear mappings</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q13-d" name="q13" class="mr-2">
+                                    <label for="q13-d">None of the above</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 14 -->
+            <div class="bg-white rounded-lg shadow-md question-container">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">14</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">The team now wants to visualize the compressed 2D representation of the data. Researcher A uses PCA with 2 components, while Researcher B trains a nonlinear autoencoder with a 2- dimensional hidden layer. Which of the following is true?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q14-a" name="q14" class="mr-2">
+                                    <label for="q14-a">PCA will provide better results since it ensures maximum variance in 2D</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q14-b" name="q14" checked class="mr-2">
+                                    <label for="q14-b"><strong>The autoencoder may learn better separability due to nonlinearity</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q14-c" name="q14" class="mr-2">
+                                    <label for="q14-c">Both methods are equivalent for visualization</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q14-d" name="q14" class="mr-2">
+                                    <label for="q14-d">PCA will outperform because autoencoders need labels</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="week3" class="mb-12 scroll-mt-20">
-            <div class="bg-gradient-to-r from-orange-500 to-red-500 rounded-t-lg p-6 mb-6">
-                <h2 class="text-3xl font-bold flex items-center text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days mr-3"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
-                    Week 3: Optimization Techniques
+        <!-- Section 4: Questions 15-17 -->
+        <section id="q15-17" class="mb-12 scroll-mt-20">
+            <div class="section-header rounded-t-lg p-6 mb-6">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check mr-3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+                    Section 4: Overcomplete Autoencoders (Q15-17)
                 </h2>
-                <p class="text-orange-100 mt-2">Solutions coming soon</p>
             </div>
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <div class="text-center py-12">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock mx-auto mb-4 text-gray-400"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <h3 class="text-xl font-semibold text-gray-600 mb-2">Week 3 Solutions</h3>
-                    <p class="text-gray-500">Complete solutions for Week 3 will be available soon. Check back later!</p>
+
+            <!-- Question 15 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">15</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Why is this trivial copying behavior a problem in overcomplete autoencoders?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q15-a" name="q15" class="mr-2">
+                                    <label for="q15-a">It leads to large training loss</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q15-b" name="q15" checked class="mr-2">
+                                    <label for="q15-b"><strong>It results in representations that don't generalize</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q15-c" name="q15" class="mr-2">
+                                    <label for="q15-c">It prevents the decoder from learning the sigmoid function</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q15-d" name="q15" class="mr-2">
+                                    <label for="q15-d">It increases model interpretability</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 16 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">16</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Which of the following regularization strategies can be used to prevent trivial identity mappings in such overcomplete architectures?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="checkbox" id="q16-a" checked class="mr-2">
+                                    <label for="q16-a"><strong>Adding noise to inputs</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="checkbox" id="q16-b" checked class="mr-2">
+                                    <label for="q16-b"><strong>Penalizing activations to enforce sparsity</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="checkbox" id="q16-c" class="mr-2">
+                                    <label for="q16-c">Adding dropout to the output layer only</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="checkbox" id="q16-d" checked class="mr-2">
+                                    <label for="q16-d"><strong>Penalizing the Jacobian of hidden activations</strong></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 17 -->
+            <div class="bg-white rounded-lg shadow-md question-container">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">17</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">What kind of autoencoder is being used in this scenario?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q17-a" name="q17" class="mr-2">
+                                    <label for="q17-a">Sparse Autoencoder</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q17-b" name="q17" checked class="mr-2">
+                                    <label for="q17-b"><strong>Denoising Autoencoder</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q17-c" name="q17" class="mr-2">
+                                    <label for="q17-c">Contractive Autoencoder</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q17-d" name="q17" class="mr-2">
+                                    <label for="q17-d">Overcomplete Autoencoder</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="week4" class="mb-12 scroll-mt-20">
-            <div class="bg-gradient-to-r from-indigo-600 to-blue-600 rounded-t-lg p-6 mb-6">
-                <h2 class="text-3xl font-bold flex items-center text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days mr-3"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
-                    Week 4: Regularization Methods
+        <!-- Section 5: Questions 18-24 -->
+        <section id="q18-24" class="mb-12 scroll-mt-20">
+            <div class="section-header rounded-t-lg p-6 mb-6">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-image mr-3"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                    Section 5: Image Processing (Q18-24)
                 </h2>
-                <p class="text-indigo-100 mt-2">Solutions coming soon</p>
             </div>
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <div class="text-center py-12">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock mx-auto mb-4 text-gray-400"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <h3 class="text-xl font-semibold text-gray-600 mb-2">Week 4 Solutions</h3>
-                    <p class="text-gray-500">Complete solutions for Week 4 will be available soon. Check back later!</p>
+
+            <!-- Question 18 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">18</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">What is the dimension of the input vector given to the autoencoder?</h3>
+                            <div class="mt-4">
+                                <div class="p-4 bg-green-50 border-l-4 border-green-500 rounded-lg">
+                                    <strong>Answer:</strong> 16384
+                                </div>
+                                <div class="mt-3 text-sm text-gray-600">
+                                    <strong>Explanation:</strong> The input images are 128 × 128 pixels, so when flattened into a vector, the dimension is 128 × 128 = 16384.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 19 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">19</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Which of the following statements correctly compares the regular and denoising autoencoder approaches for this medical image task?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q19-a" name="q19" class="mr-2">
+                                    <label for="q19-a">Vanilla autoencoder learns to reconstruct clean inputs, but may fail when noisy inputs are given at test time</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q19-b" name="q19" checked class="mr-2">
+                                    <label for="q19-b"><strong>Denoising autoencoder explicitly learns to remove noise and is better suited for this application</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q19-c" name="q19" class="mr-2">
+                                    <label for="q19-c">Both autoencoders will perform equally well if trained on clean data</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q19-d" name="q19" class="mr-2">
+                                    <label for="q19-d">Denoising autoencoders require label supervision, while vanilla autoencoders do not</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 20 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">20</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">An engineer builds an autoencoder for real-valued inputs but uses a sigmoid decoder activation and binary cross-entropy loss. What issue might arise from this setup?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q20-a" name="q20" checked class="mr-2">
+                                    <label for="q20-a"><strong>There will be a mismatch between output range and data distribution</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q20-b" name="q20" class="mr-2">
+                                    <label for="q20-b">The model will have high reconstruction accuracy</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q20-c" name="q20" class="mr-2">
+                                    <label for="q20-c">Binary cross-entropy is optimal for real-valued targets</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q20-d" name="q20" class="mr-2">
+                                    <label for="q20-d">There is no issue — this is standard practice</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 21 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">21</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Which of the following loss functions encourages sparsity in hidden unit activations?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q21-a" name="q21" checked class="mr-2">
+                                    <label for="q21-a"><strong>L(θ)= ∑<sup>m</sup><sub>i=1</sub>∥x<sub>i</sub> - x̂<sub>i</sub>∥² + λ∑<sup>n</sup><sub>j=1</sub>KL(ρ∥ρ̂<sub>j</sub>)</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q21-b" name="q21" class="mr-2">
+                                    <label for="q21-b">L(θ)= ∑<sup>m</sup><sub>i=1</sub>∥x<sub>i</sub> - x̂<sub>i</sub>∥² + λ∑<sup>n</sup><sub>j=1</sub>∥h<sub>j</sub>∥²</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q21-c" name="q21" class="mr-2">
+                                    <label for="q21-c">L(θ)= KL(x<sub>i</sub>∥x̂<sub>i</sub>)</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q21-d" name="q21" class="mr-2">
+                                    <label for="q21-d">L(θ)= -∑log x<sub>i</sub> x̂<sub>i</sub></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 22 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">22</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">What is the main idea behind a Sparse Autoencoder?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q22-a" name="q22" class="mr-2">
+                                    <label for="q22-a">It forces the hidden representation to be close to 1</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q22-b" name="q22" class="mr-2">
+                                    <label for="q22-b">It minimizes the Jacobian of the hidden layer</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q22-c" name="q22" checked class="mr-2">
+                                    <label for="q22-c"><strong>It restricts most hidden units to be inactive(close to 0)</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q22-d" name="q22" class="mr-2">
+                                    <label for="q22-d">It enforces that the encoder is always overcomplete</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 23 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">23</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Which activation pattern is most likely from a well-trained sparse autoencoder?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q23-a" name="q23" class="mr-2">
+                                    <label for="q23-a">All hidden units have average activation ≈ 0.5</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q23-b" name="q23" class="mr-2">
+                                    <label for="q23-b">Most hidden units are frequently active across inputs</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q23-c" name="q23" class="mr-2">
+                                    <label for="q23-c">Hidden units always output 1 or 0</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q23-d" name="q23" checked class="mr-2">
+                                    <label for="q23-d"><strong>Only a small subset of hidden units fire for each input</strong></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 24 -->
+            <div class="bg-white rounded-lg shadow-md question-container">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">24</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">What is the key regularization objective of a Contractive Autoencoder?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q24-a" name="q24" checked class="mr-2">
+                                    <label for="q24-a"><strong>Penalize the sensitivity of the encoder to small input changes</strong></label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q24-b" name="q24" class="mr-2">
+                                    <label for="q24-b">Encourage outputs close to 1</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q24-c" name="q24" class="mr-2">
+                                    <label for="q24-c">Match the hidden activations to a target probability</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q24-d" name="q24" class="mr-2">
+                                    <label for="q24-d">Apply noise to the input during training</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="week5" class="mb-12 scroll-mt-20">
-            <div class="bg-gradient-to-r from-teal-600 to-cyan-600 rounded-t-lg p-6 mb-6">
-                <h2 class="text-3xl font-bold flex items-center text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days mr-3"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
-                    Week 5: Advanced Architectures
+        <!-- Section 6: Questions 25-27 -->
+        <section id="q25-27" class="mb-12 scroll-mt-20">
+            <div class="section-header rounded-t-lg p-6 mb-6">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link mr-3"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    Section 6: Matching Questions (Q25-27)
                 </h2>
-                <p class="text-teal-100 mt-2">Solutions coming soon</p>
             </div>
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <div class="text-center py-12">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock mx-auto mb-4 text-gray-400"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <h3 class="text-xl font-semibold text-gray-600 mb-2">Week 5 Solutions</h3>
-                    <p class="text-gray-500">Complete solutions for Week 5 will be available soon. Check back later!</p>
+
+            <!-- Question 25 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">25</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Match the Autoencoder variant with the application it is best suited for:</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q25-a" name="q25" class="mr-2">
+                                    <label for="q25-a">A–2, B–1, C–3, D–4</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q25-b" name="q25" class="mr-2">
+                                    <label for="q25-b">A–3, B–2, C–1, D–4</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q25-c" name="q25" class="mr-2">
+                                    <label for="q25-c">A–1, B–4, C–2, D–3</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q25-d" name="q25" checked class="mr-2">
+                                    <label for="q25-d"><strong>A–3, B–1, C–2, D–4</strong></label>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-sm text-gray-600">
+                                <strong>Explanation:</strong> 
+                                <br>A. Denoising Autoencoder → 3. Robust learning from corrupted data
+                                <br>B. Sparse Autoencoder → 1. Feature discovery in unlabeled data
+                                <br>C. Contractive Autoencoder → 2. Robust representation learning
+                                <br>D. Variational Autoencoder → 4. Generating new data samples
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 26 -->
+            <div class="bg-white rounded-lg shadow-md question-container mb-6">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">26</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">In a Contractive Autoencoder, the added penalty on the Jacobian of hidden activations with respect to the input encourages which of the following behaviors?</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q26-a" name="q26" class="mr-2">
+                                    <label for="q26-a">Encoder output becomes highly sensitive to input changes</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q26-b" name="q26" class="mr-2">
+                                    <label for="q26-b">Decoder learns to reconstruct noisy images</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q26-c" name="q26" class="mr-2">
+                                    <label for="q26-c">Input features are transformed into binary values</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q26-d" name="q26" checked class="mr-2">
+                                    <label for="q26-d"><strong>Hidden representation becomes invariant to small input perturbations</strong></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 27 -->
+            <div class="bg-white rounded-lg shadow-md question-container">
+                <div class="p-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">27</div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Match the following autoencoder setups to their respective types:</h3>
+                            <div class="space-y-2 mt-4">
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q27-a" name="q27" class="mr-2">
+                                    <label for="q27-a">A–1, B–2, C–3, D–4</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q27-b" name="q27" class="mr-2">
+                                    <label for="q27-b">A–3, B–1, C–4, D–2</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-red-500 bg-red-50">
+                                    <input type="radio" id="q27-c" name="q27" class="mr-2">
+                                    <label for="q27-c">A–4, B–3, C–2, D–1</label>
+                                </div>
+                                <div class="p-3 rounded-lg border-l-4 border-green-500 bg-green-50 correct-answer">
+                                    <input type="radio" id="q27-d" name="q27" checked class="mr-2">
+                                    <label for="q27-d"><strong>A–1, B–4, C–3, D–2</strong></label>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-sm text-gray-600">
+                                <strong>Explanation:</strong> 
+                                <br>A. Noise added to input → 1. Denoising Autoencoder
+                                <br>B. Sparsity penalty → 4. Sparse Autoencoder
+                                <br>C. Jacobian penalty → 3. Contractive Autoencoder
+                                <br>D. Identity mapping → 2. Vanilla Autoencoder
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -676,24 +986,23 @@
                     <p class="text-gray-300">Comprehensive solutions for NPTEL Deep Learning course by IIT Ropar. Expert verified answers with detailed explanations.</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#week1" class="text-gray-300 hover:text-white transition-colors">Week 1</a></li>
-                        <li><a href="#week2" class="text-gray-300 hover:text-white transition-colors">Week 2</a></li>
-                        <li><a href="#week3" class="text-gray-300 hover:text-white transition-colors">Week 3</a></li>
-                        <li><a href="#week4" class="text-gray-300 hover:text-white transition-colors">Week 4</a></li>
-                        <li><a href="#week5" class="text-gray-300 hover:text-white transition-colors">Week 5</a></li>
-                        <li><a href="#week6" class="text-gray-300 hover:text-white transition-colors">Week 6</a></li>
+                    <h3 class="text-xl font-bold mb-4">Autoencoder Types</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• Undercomplete: Hidden layer < input layer</li>
+                        <li>• Overcomplete: Hidden layer > input layer</li>
+                        <li>• Denoising: Trained with corrupted inputs</li>
+                        <li>• Sparse: Enforces sparsity in hidden units</li>
+                        <li>• Contractive: Penalizes sensitivity to input</li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Study Tips</h3>
-                    <ul class="text-gray-300 space-y-2">
-                        <li>• Understand concepts before memorizing answers</li>
-                        <li>• Practice with real datasets</li>
-                        <li>• Implement models from scratch</li>
-                        <li>• Join study groups for discussion</li>
-                        <li>• Review mathematical foundations</li>
+                    <h3 class="text-xl font-bold mb-4">Key Concepts</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• Reconstruction error for anomaly detection</li>
+                        <li>• Sigmoid + BCE for binary data</li>
+                        <li>• Linear + MSE for real-valued data</li>
+                        <li>• PCA = Linear Autoencoder with MSE loss</li>
+                        <li>• Nonlinear manifolds require nonlinear AE</li>
                     </ul>
                 </div>
             </div>
