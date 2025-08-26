@@ -35,12 +35,12 @@ const testsConfig = [
     },
     {
         id: 4,
-        title: "Vocabulary Mastery Test",
-        description: "Comprehensive vocabulary test covering synonyms, antonyms, and word meanings.",
-        questions: 35,
-        timeLimit: 50,
+        title: "NPTEL Deep Learning - IIT Ropar - Complete Answers(WEEK_6)",
+        description: "Deep Learning ",
+        questions: 27,
+        timeLimit: 0.0,
         difficulty: "Intermediate",
-        categories: ["Vocabulary", "Synonyms", "Antonyms"],
+        categories: ["DL Algorithm", "ML Algorithm"],
         file: "Test_3.html",
         lastUpdated: "2024-01-30"
     },
@@ -191,6 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const testCards = document.querySelectorAll('.test-card');
     testCards.forEach(card => observer.observe(card));
 });
+
 
 
 
