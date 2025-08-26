@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPTEL Deep Learning - IIT Ropar - Complete Answers</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+    <style>
+        .question-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid #3b82f6;
+        }
+        .question-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .answer-highlight {
+            background: linear-gradient(120deg, #e0f2fe 0%, #bae6fd 100%);
+            border-left: 4px solid #0ea5e9;
+        }
+        .week-navigation a {
+            transition: all 0.2s ease;
+        }
+        .week-navigation a:hover {
+            background-color: #3b82f6;
+            color: white !important;
+        }
+        .correct-answer {
+            background-color: #f0fdf4;
+            border-left-color: #22c55e;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-900 to-indigo-900 text-white shadow-lg">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex items-center space-x-4 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain"><path d="M12 6.5c2.5 0 4.5 2 4.5 4.5S14.5 15.5 12 15.5 7.5 13.5 7.5 11s2-4.5 4.5-4.5z"/><path d="M12 6.5V3"/><path d="M12 15.5v3"/><path d="M6.5 12H3"/><path d="M17.5 12h3"/><path d="M7 7l2 2"/><path d="M15 15l2 2"/><path d="M15 7l-2 2"/><path d="M7 15l2-2"/></svg>
+                <div>
+                    <h1 class="text-3xl font-bold">NPTEL Deep Learning</h1>
+                    <p class="text-blue-200">IIT Ropar - Complete Assignment Answers</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        <span>27+ Comprehensive Questions</span>
+                    </div>
+                </div>
+                <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89l3.536 3.535a2 2 0 0 1-2.829 2.828l-3.535-3.536a10 10 0 0 1-6.364 2.277 10 10 0 0 1-7.071-2.929 2 2 0 0 1 0-2.828l3.536-3.536"/><path d="M8.523 12.89l-3.536 3.535a2 2 0 0 0 2.829 2.828l3.535-3.536a10 10 0 0 0 6.364 2.277 10 10 0 0 0 7.071-2.929 2 2 0 0 0 0-2.828l-3.536-3.536"/></svg>
+                        <span>Week 1-6 Complete Solutions</span>
+                    </div>
+                </div>
+                <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-megaphone"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+                        <span>Expert Verified Answers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md week-navigation">
+        <div class="container mx-auto px-6">
+            <div class="flex space-x-1 py-4 overflow-x-auto">
+                <a href="#week1" class="flex-shrink-0 px-6 py-3 text-center text-gray-700 font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
+                    Week 1
+                </a>
+                <a href="#week2" class="flex-shrink-0 px-6 py-3 text-center text-gray-700 font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
+                    Week 2
+                </a>
+                <a href="#week3" class="flex-shrink-0 px-6 py-3 text-center text-gray-700 font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
+                    Week 3
+                </a>
+                <a href="#week4" class="flex-shrink-0 px-6 py-3 text-center text-gray-700 font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
+                    Week 4
+                </a>
+                <a href="#week5" class="flex-shrink-0 px-6 py-3 text-center text-gray-700 font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
+                    Week 5
+                </a>
+                <a href="#week6" class="flex-shrink-0 px-6 py-3 text-center text-gray-700 font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200">
+                    Week 6
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-8">
+        
+        <!-- Week 6 Section -->
+        <section id="week6" class="mb-12 scroll-mt-20">
+            <div class="section-header rounded-t-lg p-6 mb-6">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days mr-3"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+                    Week 6: Autoencoders
+                </h2>
+                <p class="text-blue-100 mt-2">Complete Assignment Solutions</p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Question 1 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">1</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">You're working in a healthcare startup building a compression system for chest X-ray images using autoencoders. Your team has proposed the following 4 architectures for evaluation. Each diagram shows the number of neurons in the input layer, hidden layer, and output layer. Your job is to choose the architecture(s) that will best compress the input while still allowing reasonable reconstruction. Based on the diagrams shown, identify which architecture(s) represent an undercomplete autoencoder.</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> A and C
+                                    </div>
+                                    <div class="text-sm text-gray-600 mt-2">
+                                        <strong>Explanation:</strong> An undercomplete autoencoder has a hidden layer smaller than the input layer, forcing the network to learn a compressed representation. Architectures A and C have hidden layers smaller than their input layers, making them undercomplete.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">2</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Which of the following best describes the role of the hidden representation in this autoencoder setup?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> It captures a lower or higher-dimensional encoding useful for reconstruction.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">3</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">What can be said about Model A's architecture in this scenario?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> It is an undercomplete autoencoder.<br>It compresses the input data to extract meaningful features.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">4</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">What is the major risk of using Model B in this situation?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> It could trivially copy input to output without learning meaningful representations.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">5</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Suppose the autoencoder trained on normal sensor data starts showing high reconstruction error on new input data. What does this indicate?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> The new input is likely anomalous or different from training distribution.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">6</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Which decoder activation function(f) is the most suitable for the above input setting?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> sigmoid
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">7</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Which loss function should the engineer use for training the above autoencoder?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> L(θ)= −∑[x<sub>ij</sub> log(x̂<sub>ij</sub>) + (1 − x<sub>ij</sub>) log(1 − x̂<sub>ij</sub>)]
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">8</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Why would using squared error loss with sigmoid decoder and binary input be suboptimal?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> It assumes Gaussian distribution, which mismatches binary input assumptions.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">9</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Which decoder activation function is most suitable for the given input scenario?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> linear
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">10</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Suppose the inputs are normalized but still real-valued. Which loss function best suits the model's objective?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> L(θ)= ∑(x̂<sub>ij</sub> − x<sub>ij</sub>)²
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 11 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">11</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Why is binary cross-entropy loss generally not appropriate when training an autoencoder on real-valued input data?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> It assumes binary targets in[0,1], which doesn’t match real-valued ground truth.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 12 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">12</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Under the above conditions, what can be said about the representations learned by both methods?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> PCA and the linear autoencoder will learn identical subspaces
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 13 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">13</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">If the dataset is found to lie on a nonlinear manifold, which approach would likely perform better for compression and why?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> Nonlinear autoencoder, because it can learn nonlinear mappings
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 14 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">14</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">The team now wants to visualize the compressed 2D representation of the data. Researcher A uses PCA with 2 components, while Researcher B trains a nonlinear autoencoder with a 2- dimensional hidden layer. Which of the following is true?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> The autoencoder may learn better separability due to nonlinearity
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 15 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">15</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Why is this trivial copying behavior a problem in overcomplete autoencoders?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> It results in representations that don't generalize
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 16 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">16</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Which of the following regularization strategies can be used to prevent trivial identity mappings in such overcomplete architectures?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> Adding noise to inputs<br>Penalizing activations to enforce sparsity<br>Penalizing the Jacobian of hidden activations
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 17 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">17</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">What kind of autoencoder is being used in this scenario?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> Denoising Autoencoder
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 18 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">18</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">What is the dimension of the input vector given to the autoencoder?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> 16384
+                                    </div>
+                                    <div class="text-sm text-gray-600 mt-2">
+                                        <strong>Explanation:</strong> 128 × 128 = 16384 pixels
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 19 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">19</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Which of the following statements correctly compares the regular and denoising autoencoder approaches for this medical image task?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> Denoising autoencoder explicitly learns to remove noise and is better suited for this application
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 20 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">20</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">An engineer builds an autoencoder for real-valued inputs but uses a sigmoid decoder activation and binary cross-entropy loss. What issue might arise from this setup?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> There will be a mismatch between output range and data distribution
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 21 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">21</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Which of the following loss functions encourages sparsity in hidden unit activations?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> L(θ)= ∑∥x<sub>i</sub> − x̂<sub>i</sub>∥² + λ∑KL(ρ∥ρ̂<sub>j</sub>)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 22 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">22</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">What is the main idea behind a Sparse Autoencoder?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> It restricts most hidden units to be inactive(close to 0)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 23 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">23</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Which activation pattern is most likely from a well-trained sparse autoencoder?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> Only a small subset of hidden units fire for each input
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 24 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">24</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">What is the key regularization objective of a Contractive Autoencoder?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> Penalize the sensitivity of the encoder to small input changes
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 25 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">25</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Match the Autoencoder variant with the application it is best suited for:</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> A–3, B–1, C–2, D–4
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 26 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">26</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">In a Contractive Autoencoder, the added penalty on the Jacobian of hidden activations with respect to the input encourages which of the following behaviors?</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> Hidden representation becomes invariant to small input perturbations
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 27 -->
+                <div class="bg-white rounded-lg shadow-md question-card">
+                    <div class="p-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0 mt-1">27</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Match the following autoencoder setups to their respective types:</h3>
+                                <div class="mt-4 space-y-2">
+                                    <div class="bg-gray-50 p-3 rounded-lg border-l-4 border-blue-500">
+                                        <strong class="text-blue-700">Answer:</strong> A–1, B–4, C–3, D–2
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Week 1-5 Placeholder Sections -->
+        <section id="week1" class="mb-12 scroll-mt-20">
+            <div class="bg-gradient-to-r from-green-600 to-teal-600 rounded-t-lg p-6 mb-6">
+                <h2 class="text-3xl font-bold flex items-center text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days mr-3"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+                    Week 1: Neural Networks Basics
+                </h2>
+                <p class="text-green-100 mt-2">Solutions coming soon</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="text-center py-12">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock mx-auto mb-4 text-gray-400"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <h3 class="text-xl font-semibold text-gray-600 mb-2">Week 1 Solutions</h3>
+                    <p class="text-gray-500">Complete solutions for Week 1 will be available soon. Check back later!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="week2" class="mb-12 scroll-mt-20">
+            <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-t-lg p-6 mb-6">
+                <h2 class="text-3xl font-bold flex items-center text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days mr-3"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+                    Week 2: Deep Learning Fundamentals
+                </h2>
+                <p class="text-purple-100 mt-2">Solutions coming soon</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="text-center py-12">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock mx-auto mb-4 text-gray-400"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <h3 class="text-xl font-semibold text-gray-600 mb-2">Week 2 Solutions</h3>
+                    <p class="text-gray-500">Complete solutions for Week 2 will be available soon. Check back later!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="week3" class="mb-12 scroll-mt-20">
+            <div class="bg-gradient-to-r from-orange-500 to-red-500 rounded-t-lg p-6 mb-6">
+                <h2 class="text-3xl font-bold flex items-center text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days mr-3"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+                    Week 3: Optimization Techniques
+                </h2>
+                <p class="text-orange-100 mt-2">Solutions coming soon</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="text-center py-12">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock mx-auto mb-4 text-gray-400"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <h3 class="text-xl font-semibold text-gray-600 mb-2">Week 3 Solutions</h3>
+                    <p class="text-gray-500">Complete solutions for Week 3 will be available soon. Check back later!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="week4" class="mb-12 scroll-mt-20">
+            <div class="bg-gradient-to-r from-indigo-600 to-blue-600 rounded-t-lg p-6 mb-6">
+                <h2 class="text-3xl font-bold flex items-center text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days mr-3"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+                    Week 4: Regularization Methods
+                </h2>
+                <p class="text-indigo-100 mt-2">Solutions coming soon</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="text-center py-12">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock mx-auto mb-4 text-gray-400"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <h3 class="text-xl font-semibold text-gray-600 mb-2">Week 4 Solutions</h3>
+                    <p class="text-gray-500">Complete solutions for Week 4 will be available soon. Check back later!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="week5" class="mb-12 scroll-mt-20">
+            <div class="bg-gradient-to-r from-teal-600 to-cyan-600 rounded-t-lg p-6 mb-6">
+                <h2 class="text-3xl font-bold flex items-center text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days mr-3"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+                    Week 5: Advanced Architectures
+                </h2>
+                <p class="text-teal-100 mt-2">Solutions coming soon</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="text-center py-12">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock mx-auto mb-4 text-gray-400"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <h3 class="text-xl font-semibold text-gray-600 mb-2">Week 5 Solutions</h3>
+                    <p class="text-gray-500">Complete solutions for Week 5 will be available soon. Check back later!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain mr-2"><path d="M12 6.5c2.5 0 4.5 2 4.5 4.5S14.5 15.5 12 15.5 7.5 13.5 7.5 11s2-4.5 4.5-4.5z"/><path d="M12 6.5V3"/><path d="M12 15.5v3"/><path d="M6.5 12H3"/><path d="M17.5 12h3"/><path d="M7 7l2 2"/><path d="M15 15l2 2"/><path d="M15 7l-2 2"/><path d="M7 15l2-2"/></svg>
+                        Deep Learning Guide
+                    </h3>
+                    <p class="text-gray-300">Comprehensive solutions for NPTEL Deep Learning course by IIT Ropar. Expert verified answers with detailed explanations.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#week1" class="text-gray-300 hover:text-white transition-colors">Week 1</a></li>
+                        <li><a href="#week2" class="text-gray-300 hover:text-white transition-colors">Week 2</a></li>
+                        <li><a href="#week3" class="text-gray-300 hover:text-white transition-colors">Week 3</a></li>
+                        <li><a href="#week4" class="text-gray-300 hover:text-white transition-colors">Week 4</a></li>
+                        <li><a href="#week5" class="text-gray-300 hover:text-white transition-colors">Week 5</a></li>
+                        <li><a href="#week6" class="text-gray-300 hover:text-white transition-colors">Week 6</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Study Tips</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>• Understand concepts before memorizing answers</li>
+                        <li>• Practice with real datasets</li>
+                        <li>• Implement models from scratch</li>
+                        <li>• Join study groups for discussion</li>
+                        <li>• Review mathematical foundations</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 NPTEL Deep Learning Guide. All solutions are for educational purposes only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
