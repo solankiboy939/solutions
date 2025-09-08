@@ -110,6 +110,7 @@
                 'TensorFlow': {
                     title: 'Building Models with TensorFlow',
                     questions: [
+                        // 1-10
                         { question: "What is a 'Tensor' in TensorFlow?", options: ["A multi-dimensional array", "A type of calculation graph", "An optimization algorithm", "A visualization tool"], answer: 0 },
                         { question: "Which of the following best describes TensorFlow's computation graph?", options: ["A visualization of tensor dimensions", "A series of operations (nodes) and tensors (edges)", "A method for installing TensorFlow", "A hardware accelerator"], answer: 1 },
                         { question: "What is the primary purpose of a TensorFlow 'Variable'?", options: ["To store static, unchanging data", "To represent trainable parameters of a model", "To define the shape of a tensor", "To execute operations in a session"], answer: 1 },
@@ -119,12 +120,46 @@
                         { question: "A vector is a tensor of rank:", options: ["0", "1", "2", "3"], answer: 1 },
                         { question: "Deep Learning is a subfield of which broader AI field?", options: ["Natural Language Processing", "Computer Vision", "Machine Learning", "Robotics"], answer: 2 },
                         { question: "What does 'tf.GradientTape' do in TensorFlow 2.x?", options: ["Records operations for automatic differentiation", "Applies a color gradient to visualizations", "Tapes a model's layers together", "Measures the speed of computation"], answer: 0},
-                        { question: "Which of these is a common application of Deep Learning?", options: ["Simple data sorting", "Image recognition", "Basic web hosting", "Spreadsheet calculations"], answer: 1}
+                        { question: "Which of these is a common application of Deep Learning?", options: ["Simple data sorting", "Image recognition", "Basic web hosting", "Spreadsheet calculations"], answer: 1},
+                        // 11-20
+                        { question: "How do you install TensorFlow using pip?", options: ["pip install tensorflow", "pip get tensorflow", "install tensorflow", "tensorflow install"], answer: 0 },
+                        { question: "What is a 'rank' of a tensor?", options: ["Number of dimensions", "Number of elements", "Data type", "Value of the tensor"], answer: 0 },
+                        { question: "A matrix is a tensor of what rank?", options: ["1", "2", "3", "4"], answer: 1 },
+                        { question: "In TensorFlow, what does a 'node' in a computation graph represent?", options: ["A tensor", "An operation", "A variable", "A placeholder"], answer: 1 },
+                        { question: "What is the main advantage of using a computation graph?", options: ["Easier visualization", "Allows for distributed computing and automatic differentiation", "Faster Python execution", "Simpler code"], answer: 1 },
+                        { question: "What is `tf.constant` used for?", options: ["Creating a variable", "Creating a tensor with a fixed value", "Creating a placeholder", "Creating an optimizer"], answer: 1 },
+                        { question: "Which optimizer is based on the concept of momentum?", options: ["Adam", "Adagrad", "RMSprop", "SGD with momentum"], answer: 3 },
+                        { question: "What is the purpose of `tf.reshape()`?", options: ["Changes the data type of a tensor", "Changes the shape of a tensor", "Changes the value of a tensor", "Deletes a tensor"], answer: 1 },
+                        { question: "TensorBoard can be used to visualize...", options: ["Model architecture", "Loss and accuracy metrics", "Histograms of weights", "All of the above"], answer: 3 },
+                        { question: "What is a 'deep' neural network?", options: ["A network with many layers", "A network with wide layers", "A network that is hard to train", "A network that uses a specific activation function"], answer: 0 },
+                        // 21-30
+                        { question: "Which of the following is NOT a common application of Deep Learning?", options: ["Object detection in images", "Manual data entry", "Speech recognition", "Language translation"], answer: 1 },
+                        { question: "How do you execute the operations in a TensorFlow 1.x graph?", options: ["By calling `graph.run()`", "By using a `tf.Session`", "By printing the tensor", "It runs automatically"], answer: 1 },
+                        { question: "What is Eager Execution in TensorFlow 2.x?", options: ["Operations are evaluated immediately", "A way to compile graphs faster", "A mode for debugging", "A special type of layer"], answer: 0 },
+                        { question: "The Adam optimizer combines the advantages of which two other optimizers?", options: ["Adagrad and Momentum", "RMSprop and SGD", "Adadelta and Adagrad", "RMSprop and Momentum/AdaGrad"], answer: 3 },
+                        { question: "How can you view the structure of your model in TensorBoard?", options: ["Histograms tab", "Graphs tab", "Images tab", "Distributions tab"], answer: 1 },
+                        { question: "What does a loss function measure?", options: ["The accuracy of the model", "The error or 'badness' of the model's prediction", "The speed of training", "The number of parameters"], answer: 1 },
+                        { question: "What is 'One-Hot Encoding'?", options: ["A way to represent categorical data as binary vectors", "A type of encryption", "A model compression technique", "An activation function"], answer: 0 },
+                        { question: "Which TensorFlow module is used for loading and preprocessing datasets?", options: ["tf.data", "tf.keras", "tf.linalg", "tf.image"], answer: 0 },
+                        { question: "What is the role of an activation function in a neural network?", options: ["To calculate the loss", "To update the weights", "To introduce non-linearity", "To initialize the weights"], answer: 2 },
+                        { question: "The shape of a tensor representing a single grayscale image of 28x28 pixels would be:", options: ["(28, 28)", "(28, 28, 1)", "(1, 28, 28)", "Either (28, 28) or (28, 28, 1)"], answer: 3 },
+                        // 31-40
+                        { question: "Which of these is a popular optimizer for deep learning models?", options: ["Adam", "Linear Regression", "K-Means", "Decision Tree"], answer: 0 },
+                        { question: "What is backpropagation?", options: ["An algorithm for training neural networks by calculating gradients", "A way to visualize data", "A type of neural network layer", "A data normalization technique"], answer: 0 },
+                        { question: "A tensor can be defined on which of the following hardware?", options: ["CPU only", "GPU only", "TPU only", "All of the above"], answer: 3 },
+                        { question: "What is the purpose of `tf.Variable.assign()`?", options: ["To initialize a variable", "To update the value of a variable", "To retrieve the value of a variable", "To delete a variable"], answer: 1 },
+                        { question: "How would you represent a batch of 32 RGB images, each of size 64x64 pixels?", options: ["(32, 64, 64, 3)", "(64, 64, 3, 32)", "(32, 3, 64, 64)", "(3, 64, 64, 32)"], answer: 0 },
+                        { question: "In TensorFlow, `tf.reduce_mean` calculates the...", options: ["Maximum value in a tensor", "Minimum value", "Mean of elements across dimensions of a tensor", "Sum of elements"], answer: 2 },
+                        { question: "What does the term 'training epoch' mean?", options: ["One pass of a single datapoint through the model", "One complete pass of the entire training dataset through the model", "One update of the model's weights", "One forward pass without backpropagation"], answer: 1 },
+                        { question: "Which TensorFlow API is recommended for beginners?", options: ["Low-level Core API", "Keras API", "Estimators API", "TensorFlow.js API"], answer: 1 },
+                        { question: "What is the goal of transfer learning?", options: ["To train a model from scratch", "To use a pre-trained model as a starting point for a new task", "To reduce the number of layers in a model", "To increase training time"], answer: 1 },
+                        { question: "TensorFlow was developed by which company?", options: ["Facebook", "Microsoft", "Google", "Amazon"], answer: 2 }
                     ]
                 },
                 'Keras': {
                     title: 'Building Models with Keras',
                     questions: [
+                        // 1-10
                         { question: "Keras is best described as:", options: ["A low-level tensor manipulation library", "A high-level API for building and training deep learning models", "A hardware accelerator for deep learning", "A data visualization tool"], answer: 1 },
                         { question: "What is the function of a 'Dense' layer in Keras?", options: ["To perform convolutional operations", "A fully connected neural network layer", "To reduce the dimensionality of the input", "To normalize the input data"], answer: 1 },
                         { question: "What does the `model.compile()` step in Keras do?", options: ["It starts the training process", "It saves the model to a file", "It configures the model for training with an optimizer and loss function", "It evaluates the model's performance"], answer: 2 },
@@ -134,12 +169,46 @@
                         { question: "For a multi-class classification problem, what is a common activation function for the final layer?", options: ["ReLU", "Sigmoid", "Tanh", "Softmax"], answer: 3 },
                         { question: "How can you save a trained Keras model?", options: ["model.save('my_model.h5')", "model.store('my_model.keras')", "model.export('my_model.json')", "model.write('my_model')"], answer: 0 },
                         { question: "What is hyperparameter tuning?", options: ["Adjusting the weights of a model during training", "Finding the best model architecture and training parameters", "Saving and loading a model", "Classifying text data"], answer: 1 },
-                        { question: "A Multi-Layer Perceptron (MLP) is suitable for what kind of tasks?", options: ["Only image classification", "Only text classification", "Tabular data classification and regression", "Only time-series analysis"], answer: 2 }
+                        { question: "A Multi-Layer Perceptron (MLP) is suitable for what kind of tasks?", options: ["Only image classification", "Only text classification", "Tabular data classification and regression", "Only time-series analysis"], answer: 2 },
+                        // 11-20
+                        { question: "Which layer is used for processing image data in Keras?", options: ["Dense", "Conv2D", "LSTM", "Embedding"], answer: 1 },
+                        { question: "What does `model.summary()` do?", options: ["Starts the model training", "Prints a summary of the model's architecture", "Saves the model", "Evaluates the model"], answer: 1 },
+                        { question: "To build a sequential model in Keras, you would typically start with:", options: ["model = Sequential()", "model = Functional()", "model = new Model()", "model.create()"], answer: 0 },
+                        { question: "Which loss function is commonly used for binary classification problems?", options: ["binary_crossentropy", "categorical_crossentropy", "mean_squared_error", "hinge"], answer: 0 },
+                        { question: "What is the purpose of a 'Dropout' layer?", options: ["To add more neurons to the network", "To prevent overfitting by randomly setting neuron activations to zero", "To speed up training", "To decrease the learning rate"], answer: 1 },
+                        { question: "How do you add a layer to a `Sequential` model in Keras?", options: ["model.add(layer)", "model.push(layer)", "model.insert(layer)", "model.layer(add)"], answer: 0 },
+                        { question: "For a regression problem, what is a common activation function for the final layer?", options: ["Softmax", "Sigmoid", "ReLU", "Linear"], answer: 3 },
+                        { question: "What is 'underfitting'?", options: ["The model is too complex and fits the noise in the data", "The model performs well on test data", "The model is too simple to capture the underlying pattern of the data", "The model trains too slowly"], answer: 2 },
+                        { question: "How can you load a previously saved Keras model?", options: ["keras.models.load_model('my_model.h5')", "keras.load('my_model.h5')", "keras.Model.open('my_model.h5')", "keras.import_model('my_model.h5')"], answer: 0 },
+                        { question: "Which callback in Keras can be used to stop training when a monitored metric has stopped improving?", options: ["ModelCheckpoint", "TensorBoard", "EarlyStopping", "LearningRateScheduler"], answer: 2 },
+                        // 21-30
+                        { question: "What is the role of the `Embedding` layer in Keras, often used in text classification?", options: ["To perform convolution on text", "To reduce model size", "To turn positive integers (indexes) into dense vectors of fixed size", "To connect all neurons"], answer: 2 },
+                        { question: "The Keras Functional API allows you to build models that are...", options: ["Strictly sequential", "More complex, with multiple inputs/outputs and shared layers", "Easier to compile", "Only for regression"], answer: 1 },
+                        { question: "The `metrics` argument in `model.compile()` is used for:", options: ["Defining the loss function", "Evaluating the model's performance during training and testing", "Choosing the optimizer", "Setting the batch size"], answer: 1 },
+                        { question: "Which of these is a technique to combat overfitting?", options: ["Data Augmentation", "Using a smaller model", "Dropout", "All of the above"], answer: 3 },
+                        { question: "What is the output shape of a `Conv2D` layer with 32 filters and 'same' padding on a 64x64x3 input image?", options: ["Depends on kernel size", "(64, 64, 32)", "(62, 62, 32)", "(32, 32, 32)"], answer: 1 },
+                        { question: "Which layer is specifically designed for processing sequential data like time series or text?", options: ["Dense", "Conv1D", "MaxPool1D", "LSTM/GRU"], answer: 3 },
+                        { question: "In Keras, what does `batch_size` refer to during training?", options: ["The total number of training examples", "The number of epochs", "The number of training samples to work through before updating the model's parameters", "The number of layers in the model"], answer: 2 },
+                        { question: "To build a text classification model that handles variable-length sequences, you might use which layer?", options: ["Flatten", "Padding", "Dense", "Reshape"], answer: 1 },
+                        { question: "Hyperparameter tuning can be automated using tools like:", options: ["Keras Tuner", "GridSearchCV", "RandomizedSearchCV", "All of the above"], answer: 3 },
+                        { question: "The `activation='relu'` stands for:", options: ["Rectified Linear Unit", "Regularized Linear Unit", "Random Linear Unit", "Reduced Linear Unit"], answer: 0 },
+                        // 31-40
+                        { question: "What is the purpose of a validation set?", options: ["To train the model", "To tune hyperparameters and evaluate model performance during training", "To provide final, unseen data for testing", "To augment the training data"], answer: 1 },
+                        { question: "Which metric would you use to evaluate a regression model?", options: ["Accuracy", "Precision", "Recall", "Mean Squared Error (MSE)"], answer: 3 },
+                        { question: "The `input_shape` argument is required for which layer in a Sequential model?", options: ["Only the output layer", "Only the hidden layers", "Only the first layer", "All layers"], answer: 2 },
+                        { question: "How do you get predictions from a trained Keras model for new data?", options: ["model.run(new_data)", "model.predict(new_data)", "model.test(new_data)", "model.infer(new_data)"], answer: 1 },
+                        { question: "`categorical_crossentropy` is a suitable loss function when:", options: ["The labels are one-hot encoded vectors", "It's a binary classification problem", "It's a regression problem", "The labels are single integers"], answer: 0 },
+                        { question: "What does a `Flatten` layer do?", options: ["It reshapes the output of a convolutional layer into a 1D vector", "It normalizes the input", "It performs a dot product", "It randomly drops units"], answer: 0 },
+                        { question: "Keras was originally created by:", options: ["Geoffrey Hinton", "Yann LeCun", "François Chollet", "Andrew Ng"], answer: 2 },
+                        { question: "When building a model for image classification, the last layers are typically:", options: ["Convolutional layers", "Pooling layers", "Fully-connected (Dense) layers", "Recurrent layers"], answer: 2 },
+                        { question: "Data augmentation for images involves:", options: ["Creating more training data by applying transformations like rotation, zoom, and flips", "Getting more labeled data", "Using a larger model", "Increasing the image resolution"], answer: 0 },
+                        { question: "The backend for Keras can be:", options: ["TensorFlow", "Theano", "CNTK", "All of the above"], answer: 3 }
                     ]
                 },
                 'NVIDIA DGX A100': {
                     title: 'NVIDIA DGX Station A100',
                     questions: [
+                        // 1-10
                         { question: "What is the NVIDIA DGX Station A100 primarily designed for?", options: ["General office work and web browsing", "High-performance AI research and development", "Video gaming and streaming", "Cryptocurrency mining"], answer: 1 },
                         { question: "Which key hardware component is central to the DGX Station A100's performance?", options: ["Intel Core i9 CPU", "NVIDIA A100 Tensor Core GPUs", "AMD Radeon GPUs", "A large amount of RAM"], answer: 1 },
                         { question: "What is the CUDA Toolkit?", options: ["A 3D modeling software", "A parallel computing platform and programming model for NVIDIA GPUs", "An operating system for the DGX Station", "A type of cooling system"], answer: 1 },
@@ -149,7 +218,40 @@
                         { question: "The 'A100' in the product name refers to the:", options: ["Number of CPU cores", "Model of the GPU", "Amount of storage in terabytes", "Version of the operating system"], answer: 1},
                         { question: "Which feature of the A100 GPU allows it to be partitioned into smaller, isolated instances?", options: ["Multi-Instance GPU (MIG)", "CUDA Cores", "Tensor Cores", "NVLink"], answer: 0},
                         { question: "The software stack on the DGX Station A100 typically includes:", options: ["Microsoft Office Suite", "Docker, Kubernetes, and NVIDIA GPU Cloud (NGC) containers", "Adobe Creative Cloud", "Standard web browsers and email clients"], answer: 1},
-                        { question: "The future of AI with systems like the DGX Station A100 points towards:", options: ["Smaller, less complex models", "More accessible, powerful, and larger-scale AI models", "A decreased need for specialized hardware", "AI that requires less data to train"], answer: 1}
+                        { question: "The future of AI with systems like the DGX Station A100 points towards:", options: ["Smaller, less complex models", "More accessible, powerful, and larger-scale AI models", "A decreased need for specialized hardware", "AI that requires less data to train"], answer: 1},
+                        // 11-20
+                        { question: "The DGX Station A100 is targeted towards:", options: ["Individual users and small teams", "Large enterprise data centers", "Cloud service providers", "Government agencies only"], answer: 0 },
+                        { question: "How much total GPU memory is available on a standard DGX Station A100 (4-GPU model)?", options: ["80 GB", "160 GB", "320 GB", "640 GB"], answer: 2 },
+                        { question: "What is NVIDIA NGC?", options: ["A hardware component", "A hub for GPU-optimized AI software, containers, and pre-trained models", "A programming language", "A cooling technology"], answer: 1 },
+                        { question: "The 'Tensor Cores' in the A100 GPU are specifically designed to accelerate which type of calculations?", options: ["General-purpose computing", "Matrix multiplication, important for AI", "3D graphics rendering", "Video decoding"], answer: 1 },
+                        { question: "What is the main benefit of the Multi-Instance GPU (MIG) feature?", options: ["Increases the clock speed of a single GPU", "Allows a single GPU to be partitioned into multiple smaller, secure GPU instances", "Combines multiple GPUs into one logical unit", "Reduces power consumption"], answer: 1 },
+                        { question: "The DGX Station A100 uses what kind of cooling system?", options: ["Standard air cooling with fans", "Refrigerated liquid cooling", "Passive heatsinks only", "It does not require cooling"], answer: 1 },
+                        { question: "The software environment on a DGX is typically based on which operating system?", options: ["Windows", "macOS", "Ubuntu Linux", "CentOS"], answer: 2 },
+                        { question: "CUDA enables developers to write programs that run on:", options: ["NVIDIA GPUs", "AMD GPUs", "Intel CPUs", "All of the above"], answer: 0 },
+                        { question: "What does the 'A' in A100 stand for?", options: ["Ampere architecture", "Artificial Intelligence", "Advanced", "Accelerated"], answer: 0 },
+                        { question: "A key software component for managing containerized applications on DGX systems is:", options: ["Docker", "VMware", "VirtualBox", "Hyper-V"], answer: 0 },
+                        // 21-30
+                        { question: "What is the role of NVLink in a DGX system?", options: ["It connects the DGX to the internet", "It provides a high-speed, direct interconnect between GPUs", "It connects peripherals like keyboards and mice", "It is the power supply cable"], answer: 1 },
+                        { question: "The DGX Station A100 is designed to be 'plug-and-go', meaning:", options: ["It requires complex setup and integration into a data center", "It can be used in a standard office environment without special infrastructure", "It is battery-powered", "It is a cloud-only service"], answer: 1 },
+                        { question: "What type of workloads benefit most from the DGX Station A100?", options: ["Large-scale deep learning model training", "Data analysis and visualization", "High-performance computing (HPC) simulations", "All of the above"], answer: 3 },
+                        { question: "Which NVIDIA library is used for deep learning primitives?", options: ["cuDNN", "cuBLAS", "cuFFT", "cuSPARSE"], answer: 0 },
+                        { question: "The future of AI with hardware like the DGX A100 enables the development of what kind of models?", options: ["Transformer models with billions of parameters", "Simple linear regression models", "Small decision trees", "K-means clustering models"], answer: 0 },
+                        { question: "The DGX Station A100 software stack aims to provide a ___________ environment for AI developers.", options: ["Bare-metal, difficult-to-configure", "Fully integrated and optimized", "Limited and restricted", "Windows-based"], answer: 1 },
+                        { question: "How does the A100 GPU improve upon previous generations like the V100?", options: ["Higher performance", "More memory", "Features like MIG and structural sparsity", "All of the above"], answer: 3 },
+                        { question: "What is 'structural sparsity' support in the A100?", options: ["A feature to make models physically smaller", "A new way to accelerate sparse matrix calculations, leading to higher performance", "A technique for data compression", "A method for reducing power usage"], answer: 1 },
+                        { question: "To manage a cluster of DGX systems, NVIDIA provides which software platform?", options: ["NVIDIA Base Command", "NVIDIA GeForce Experience", "NVIDIA Shield", "NVIDIA Canvas"], answer: 0 },
+                        { question: "The primary interface for programming the A100 GPU is:", options: ["Python", "Java", "C++ with CUDA", "HTML"], answer: 2 },
+                        // 31-40
+                        { question: "The DGX Station A100 is often referred to as a 'personal supercomputer' for AI.", options: ["True", "False"], answer: 0 },
+                        { question: "Which part of the DGX software stack helps in managing and orchestrating containers?", options: ["The Linux Kernel", "Kubernetes", "The BIOS", "The CPU"], answer: 1 },
+                        { question: "The main CPU in a DGX Station A100 serves to:", options: ["Perform the majority of AI calculations", "Manage the system and feed data to the GPUs", "Render graphics for the display", "Run the cooling system"], answer: 1 },
+                        { question: "The performance of a single A100 GPU is often measured in:", options: ["Gigahertz (GHz)", "Megabytes per second (MB/s)", "TeraFLOPS (TFLOPS) or PetaOPS", "Revolutions per minute (RPM)"], answer: 2 },
+                        { question: "Accessing pre-trained models from NGC can significantly ___________ AI development time.", options: ["Increase", "Have no effect on", "Reduce", "Complicate"], answer: 2 },
+                        { question: "The DGX Station is suitable for which phase of AI development?", options: ["Data collection only", "Prototyping and development", "Deployment only", "All phases from development to training"], answer: 3 },
+                        { question: "What type of memory is used in the A100 GPUs for high bandwidth?", options: ["DDR4", "GDDR6", "HBM2e", "SSD"], answer: 2 },
+                        { question: "The DGX A100 platform is designed to accelerate the entire data science workflow, not just model training.", options: ["True", "False"], answer: 0 },
+                        { question: "What is NVIDIA's framework for conversational AI, often run on DGX systems?", options: ["TensorRT", "Riva", "DeepStream", "Clara"], answer: 1 },
+                        { question: "The evolution of AI hardware like the DGX Station A100 is a key driver behind the recent progress in:", options: ["Quantum computing", "Large Language Models (LLMs)", "Web development", "Mobile applications"], answer: 1 }
                     ]
                 }
             };
@@ -305,3 +407,4 @@
     </script>
 </body>
 </html>
+
