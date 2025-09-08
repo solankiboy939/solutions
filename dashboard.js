@@ -44,17 +44,17 @@ const testsConfig = [
         file: "Test_3.html",
         lastUpdated: "2024-01-30"
     },
-    // {
-    //     id: 5,
-    //     title: "Idioms and Phrases Test",
-    //     description: "Test your knowledge of common English idioms and phrases.",
-    //     questions: 25,
-    //     timeLimit: 35,
-    //     difficulty: "Intermediate",
-    //     categories: ["Idioms", "Phrases"],
-    //     file: "test_5.html",
-    //     lastUpdated: "2024-02-01"
-    // }
+    {
+        id: 5,
+        title: "Idioms and Phrases Test",
+        description: "Test your knowledge of AI/DEEP_LEARNING",
+        questions: 25,
+        timeLimit: 35,
+        difficulty: "Intermediate",
+        categories: ["Idioms", "Phrases"],
+        file: "test_4.html",
+        lastUpdated: "2024-02-01"
+    }
 ];
 
 // DOM elements
@@ -191,6 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const testCards = document.querySelectorAll('.test-card');
     testCards.forEach(card => observer.observe(card));
 });
+
 
 
 
