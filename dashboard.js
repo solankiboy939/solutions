@@ -46,7 +46,7 @@ const testsConfig = [
     },
     {
         id: 5,
-        title: "Idioms and Phrases Test",
+        title: "AI & Deep Learning Practice Quiz",
         description: "Test your knowledge of AI/DEEP_LEARNING",
         questions: 25,
         timeLimit: 35,
@@ -191,6 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const testCards = document.querySelectorAll('.test-card');
     testCards.forEach(card => observer.observe(card));
 });
+
 
 
 
