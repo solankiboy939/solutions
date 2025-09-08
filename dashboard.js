@@ -51,7 +51,7 @@ const testsConfig = [
         questions: 25,
         timeLimit: 35,
         difficulty: "Intermediate",
-        categories: ["Idioms", "Phrases"],
+        categories: ["Tessorflow", "Keras"],
         file: "test_4.html",
         lastUpdated: "2024-02-01"
     }
@@ -191,6 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const testCards = document.querySelectorAll('.test-card');
     testCards.forEach(card => observer.observe(card));
 });
+
 
 
 
