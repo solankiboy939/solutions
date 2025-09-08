@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & Deep Learning Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .topic-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .option-btn {
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        .correct {
+            background-color: #10B981 !important; /* Green-500 */
+            color: white !important;
+            border-color: #059669 !important;
+        }
+        .incorrect {
+            background-color: #EF4444 !important; /* Red-500 */
+            color: white !important;
+            border-color: #DC2626 !important;
+        }
+        /* Custom styles for dark mode */
+        .dark .bg-gray-50 { background-color: #111827; } /* gray-900 */
+        .dark .bg-white { background-color: #1F2937; } /* gray-800 */
+        .dark .text-gray-800 { color: #F9FAFB; } /* gray-50 */
+        .dark .text-gray-600 { color: #D1D5DB; } /* gray-300 */
+        .dark .border-gray-200 { border-color: #374151; } /* gray-700 */
+        .dark .hover\:bg-gray-100:hover { background-color: #374151; } /* gray-700 */
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-white transition-colors duration-300">
+
+    <div id="app" class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-4xl">
+        
+        <!-- Topic Selection Screen -->
+        <div id="topic-selection">
+            <header class="text-center mb-8">
+                <h1 class="text-3xl sm:text-4xl font-bold text-indigo-600 dark:text-indigo-400">AI & Deep Learning Practice Quiz</h1>
+                <p class="text-md text-gray-600 dark:text-gray-300 mt-2">Select a topic to test your knowledge.</p>
+            </header>
+            <div id="topic-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Topic cards will be injected here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-container" class="hidden">
+            <header class="mb-6">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 id="quiz-title" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400"></h2>
+                    <span id="question-counter" class="text-sm font-medium text-gray-600 dark:text-gray-300"></span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                    <div id="progress-bar" class="bg-indigo-600 dark:bg-indigo-400 h-2.5 rounded-full transition-all duration-500"></div>
+                </div>
+            </header>
+            
+            <div id="question-card" class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <p id="question-text" class="text-lg font-semibold mb-6"></p>
+                <div id="options-container" class="space-y-4">
+                    <!-- Options will be injected here -->
+                </div>
+            </div>
+
+            <div id="feedback-container" class="mt-4 p-4 rounded-md text-center hidden">
+                <p id="feedback-text" class="font-medium"></p>
+            </div>
+
+            <div class="mt-8 text-center">
+                <button id="next-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300 shadow-md hidden w-full sm:w-auto">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-container" class="hidden text-center">
+            <header class="mb-6">
+                <h2 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400">Quiz Complete!</h2>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">Here's how you did:</p>
+            </header>
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-xl mb-8">
+                <p class="text-5xl font-bold" id="score-text"></p>
+                <p class="text-gray-600 dark:text-gray-300 mt-2" id="score-percentage"></p>
+            </div>
+            
+            <div id="review-container" class="text-left">
+                <h3 class="text-xl font-bold mb-4">Review Your Answers</h3>
+                <!-- Answer review will be injected here -->
+            </div>
+
+            <div class="mt-8">
+                <button id="restart-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300 shadow-md w-full sm:w-auto">Try Another Topic</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const quizData = {
+                'TensorFlow': {
+                    title: 'Building Models with TensorFlow',
+                    questions: [
+                        { question: "What is a 'Tensor' in TensorFlow?", options: ["A multi-dimensional array", "A type of calculation graph", "An optimization algorithm", "A visualization tool"], answer: 0 },
+                        { question: "Which of the following best describes TensorFlow's computation graph?", options: ["A visualization of tensor dimensions", "A series of operations (nodes) and tensors (edges)", "A method for installing TensorFlow", "A hardware accelerator"], answer: 1 },
+                        { question: "What is the primary purpose of a TensorFlow 'Variable'?", options: ["To store static, unchanging data", "To represent trainable parameters of a model", "To define the shape of a tensor", "To execute operations in a session"], answer: 1 },
+                        { question: "Which component is used to visualize TensorFlow graphs and metrics?", options: ["TensorBoard", "Keras", "Numpy", "CUDA"], answer: 0 },
+                        { question: "What is an 'Optimizer' in TensorFlow responsible for?", options: ["Building the model's architecture", "Defining the loss function", "Minimizing the loss function by updating variables", "Transforming tensor dimensions"], answer: 2 },
+                        { question: "The rank of a scalar value (e.g., 5) in TensorFlow is:", options: ["0", "1", "2", "Not defined"], answer: 0 },
+                        { question: "A vector is a tensor of rank:", options: ["0", "1", "2", "3"], answer: 1 },
+                        { question: "Deep Learning is a subfield of which broader AI field?", options: ["Natural Language Processing", "Computer Vision", "Machine Learning", "Robotics"], answer: 2 },
+                        { question: "What does 'tf.GradientTape' do in TensorFlow 2.x?", options: ["Records operations for automatic differentiation", "Applies a color gradient to visualizations", "Tapes a model's layers together", "Measures the speed of computation"], answer: 0},
+                        { question: "Which of these is a common application of Deep Learning?", options: ["Simple data sorting", "Image recognition", "Basic web hosting", "Spreadsheet calculations"], answer: 1}
+                    ]
+                },
+                'Keras': {
+                    title: 'Building Models with Keras',
+                    questions: [
+                        { question: "Keras is best described as:", options: ["A low-level tensor manipulation library", "A high-level API for building and training deep learning models", "A hardware accelerator for deep learning", "A data visualization tool"], answer: 1 },
+                        { question: "What is the function of a 'Dense' layer in Keras?", options: ["To perform convolutional operations", "A fully connected neural network layer", "To reduce the dimensionality of the input", "To normalize the input data"], answer: 1 },
+                        { question: "What does the `model.compile()` step in Keras do?", options: ["It starts the training process", "It saves the model to a file", "It configures the model for training with an optimizer and loss function", "It evaluates the model's performance"], answer: 2 },
+                        { question: "The problem where a model performs well on training data but poorly on new, unseen data is called:", options: ["Underfitting", "Hyperparameter tuning", "Overfitting", "Regression"], answer: 2 },
+                        { question: "Which Keras function is used to train a model?", options: ["model.predict()", "model.evaluate()", "model.compile()", "model.fit()"], answer: 3 },
+                        { question: "In Keras, a 'Model' is primarily a:", options: ["Container for layers", "Type of optimizer", "Loss function", "Dataset"], answer: 0 },
+                        { question: "For a multi-class classification problem, what is a common activation function for the final layer?", options: ["ReLU", "Sigmoid", "Tanh", "Softmax"], answer: 3 },
+                        { question: "How can you save a trained Keras model?", options: ["model.save('my_model.h5')", "model.store('my_model.keras')", "model.export('my_model.json')", "model.write('my_model')"], answer: 0 },
+                        { question: "What is hyperparameter tuning?", options: ["Adjusting the weights of a model during training", "Finding the best model architecture and training parameters", "Saving and loading a model", "Classifying text data"], answer: 1 },
+                        { question: "A Multi-Layer Perceptron (MLP) is suitable for what kind of tasks?", options: ["Only image classification", "Only text classification", "Tabular data classification and regression", "Only time-series analysis"], answer: 2 }
+                    ]
+                },
+                'NVIDIA DGX A100': {
+                    title: 'NVIDIA DGX Station A100',
+                    questions: [
+                        { question: "What is the NVIDIA DGX Station A100 primarily designed for?", options: ["General office work and web browsing", "High-performance AI research and development", "Video gaming and streaming", "Cryptocurrency mining"], answer: 1 },
+                        { question: "Which key hardware component is central to the DGX Station A100's performance?", options: ["Intel Core i9 CPU", "NVIDIA A100 Tensor Core GPUs", "AMD Radeon GPUs", "A large amount of RAM"], answer: 1 },
+                        { question: "What is the CUDA Toolkit?", options: ["A 3D modeling software", "A parallel computing platform and programming model for NVIDIA GPUs", "An operating system for the DGX Station", "A type of cooling system"], answer: 1 },
+                        { question: "The DGX Station A100 software stack is optimized for workloads in:", options: ["Graphic design", "AI and Data Science", "Database management", "Web development"], answer: 1 },
+                        { question: "Which technology allows multiple A100 GPUs in a DGX system to communicate at high speed?", options: ["Ethernet", "Wi-Fi 6", "NVIDIA NVLink", "PCI Express 3.0"], answer: 2 },
+                        { question: "The DGX Station A100 is described as a 'datascenter in a box' because it:", options: ["Is very large and heavy", "Requires a special data center environment", "Offers massive computational power in a desktop form factor", "Can only be accessed remotely"], answer: 2},
+                        { question: "The 'A100' in the product name refers to the:", options: ["Number of CPU cores", "Model of the GPU", "Amount of storage in terabytes", "Version of the operating system"], answer: 1},
+                        { question: "Which feature of the A100 GPU allows it to be partitioned into smaller, isolated instances?", options: ["Multi-Instance GPU (MIG)", "CUDA Cores", "Tensor Cores", "NVLink"], answer: 0},
+                        { question: "The software stack on the DGX Station A100 typically includes:", options: ["Microsoft Office Suite", "Docker, Kubernetes, and NVIDIA GPU Cloud (NGC) containers", "Adobe Creative Cloud", "Standard web browsers and email clients"], answer: 1},
+                        { question: "The future of AI with systems like the DGX Station A100 points towards:", options: ["Smaller, less complex models", "More accessible, powerful, and larger-scale AI models", "A decreased need for specialized hardware", "AI that requires less data to train"], answer: 1}
+                    ]
+                }
+            };
+
+            let currentTopic = '';
+            let currentQuestionIndex = 0;
+            let score = 0;
+            let userAnswers = [];
+            let questions = [];
+
+            const topicSelectionEl = document.getElementById('topic-selection');
+            const quizContainerEl = document.getElementById('quiz-container');
+            const resultsContainerEl = document.getElementById('results-container');
+            const topicGridEl = document.getElementById('topic-grid');
+
+            function init() {
+                topicSelectionEl.classList.remove('hidden');
+                quizContainerEl.classList.add('hidden');
+                resultsContainerEl.classList.add('hidden');
+                topicGridEl.innerHTML = '';
+                Object.keys(quizData).forEach(key => {
+                    const topic = quizData[key];
+                    const card = document.createElement('div');
+                    card.className = 'topic-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md cursor-pointer';
+                    card.innerHTML = `<h3 class="text-xl font-bold text-indigo-600 dark:text-indigo-400">${topic.title}</h3><p class="text-gray-600 dark:text-gray-300 mt-2">${topic.questions.length} questions</p>`;
+                    card.addEventListener('click', () => startQuiz(key));
+                    topicGridEl.appendChild(card);
+                });
+            }
+
+            function startQuiz(topicKey) {
+                currentTopic = topicKey;
+                questions = quizData[topicKey].questions;
+                currentQuestionIndex = 0;
+                score = 0;
+                userAnswers = [];
+
+                topicSelectionEl.classList.add('hidden');
+                resultsContainerEl.classList.add('hidden');
+                quizContainerEl.classList.remove('hidden');
+                document.getElementById('quiz-title').textContent = quizData[topicKey].title;
+                showQuestion();
+            }
+
+            function showQuestion() {
+                const question = questions[currentQuestionIndex];
+                document.getElementById('question-text').textContent = question.question;
+                
+                const optionsContainer = document.getElementById('options-container');
+                optionsContainer.innerHTML = '';
+
+                question.options.forEach((option, index) => {
+                    const button = document.createElement('button');
+                    button.textContent = option;
+                    button.className = 'option-btn block w-full text-left p-4 border-2 border-gray-200 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700';
+                    button.dataset.index = index;
+                    button.addEventListener('click', selectAnswer);
+                    optionsContainer.appendChild(button);
+                });
+
+                updateProgress();
+                document.getElementById('next-btn').classList.add('hidden');
+                document.getElementById('feedback-container').classList.add('hidden');
+            }
+
+            function selectAnswer(e) {
+                const selectedButton = e.target;
+                const selectedIndex = parseInt(selectedButton.dataset.index);
+                const correctIndex = questions[currentQuestionIndex].answer;
+                
+                userAnswers[currentQuestionIndex] = selectedIndex;
+
+                Array.from(document.getElementsByClassName('option-btn')).forEach((btn, index) => {
+                    btn.disabled = true;
+                    if (index === correctIndex) {
+                        btn.classList.add('correct');
+                    } else if (index === selectedIndex) {
+                        btn.classList.add('incorrect');
+                    }
+                });
+
+                const feedbackContainer = document.getElementById('feedback-container');
+                const feedbackText = document.getElementById('feedback-text');
+
+                if (selectedIndex === correctIndex) {
+                    score++;
+                    feedbackText.textContent = "Correct!";
+                    feedbackContainer.className = 'mt-4 p-4 rounded-md text-center bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200';
+                } else {
+                    feedbackText.textContent = `Incorrect. The correct answer was: "${questions[currentQuestionIndex].options[correctIndex]}"`;
+                     feedbackContainer.className = 'mt-4 p-4 rounded-md text-center bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200';
+                }
+                
+                feedbackContainer.classList.remove('hidden');
+                document.getElementById('next-btn').classList.remove('hidden');
+                
+                if (currentQuestionIndex === questions.length - 1) {
+                    document.getElementById('next-btn').textContent = 'Show Results';
+                } else {
+                    document.getElementById('next-btn').textContent = 'Next Question';
+                }
+            }
+            
+            function handleNext() {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            }
+
+            function showResults() {
+                quizContainerEl.classList.add('hidden');
+                resultsContainerEl.classList.remove('hidden');
+
+                const percentage = Math.round((score / questions.length) * 100);
+                document.getElementById('score-text').textContent = `${score} / ${questions.length}`;
+                document.getElementById('score-percentage').textContent = `You scored ${percentage}%`;
+                
+                const reviewContainer = document.getElementById('review-container');
+                reviewContainer.innerHTML = '<h3 class="text-xl font-bold mb-4">Review Your Answers</h3>';
+                questions.forEach((q, index) => {
+                    const userAnswerIndex = userAnswers[index];
+                    const isCorrect = userAnswerIndex === q.answer;
+                    const resultEl = document.createElement('div');
+                    resultEl.className = 'p-4 mb-4 rounded-lg bg-white dark:bg-gray-800 border-l-4';
+                    resultEl.style.borderColor = isCorrect ? '#10B981' : '#EF4444';
+                    
+                    resultEl.innerHTML = `
+                        <p class="font-semibold">${index + 1}. ${q.question}</p>
+                        <p class="mt-2 text-sm ${isCorrect ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}">
+                            Your answer: ${q.options[userAnswerIndex]} ${isCorrect ? '✔' : '✖'}
+                        </p>
+                        ${!isCorrect ? `<p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Correct answer: ${q.options[q.answer]}</p>` : ''}
+                    `;
+                    reviewContainer.appendChild(resultEl);
+                });
+            }
+
+            function updateProgress() {
+                const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+                document.getElementById('progress-bar').style.width = `${progress}%`;
+                document.getElementById('question-counter').textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+            }
+
+            document.getElementById('next-btn').addEventListener('click', handleNext);
+            document.getElementById('restart-btn').addEventListener('click', init);
+            
+            // Initialize the app
+            init();
+        });
+    </script>
+</body>
+</html>
