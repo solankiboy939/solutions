@@ -55,7 +55,7 @@ const testsConfig = [
         file: "test_4.html",
         lastUpdated: "2024-02-01"
     },
-        {
+    {
         id: 6,
         title: "Week 8 Assignment",
         description: "NPTEL Deep Learning - IIT Ropar",
@@ -202,6 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const testCards = document.querySelectorAll('.test-card');
     testCards.forEach(card => observer.observe(card));
 });
+
 
 
 
