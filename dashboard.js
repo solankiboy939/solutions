@@ -54,6 +54,17 @@ const testsConfig = [
         categories: ["Tessorflow", "Keras"],
         file: "test_4.html",
         lastUpdated: "2024-02-01"
+    },
+        {
+        id: 5,
+        title: "Week 8 Assignment",
+        description: "NPTEL Deep Learning - IIT Ropar",
+        questions: 27,
+        timeLimit: 600,
+        difficulty: "Intermediate",
+        categories: ["Tessorflow", "Keras"],
+        file: "test_5.html",
+        lastUpdated: "2025-09-17, 23:59 IST"
     }
 ];
 
@@ -191,6 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const testCards = document.querySelectorAll('.test-card');
     testCards.forEach(card => observer.observe(card));
 });
+
 
 
 
