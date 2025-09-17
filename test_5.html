@@ -1,0 +1,1414 @@
+
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <style>
+                body {
+                  background-color: white; /* Ensure the iframe has a white background */
+                }
+    
+                
+              </style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPTEL Deep Learning - Week 8 Assignment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --secondary: #64748b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --info: #06b6d4;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-800: #1e293b;
+            --correct: #dcfce7;
+            --incorrect: #fee2e2;
+            --multi-bg: #f0fdf4;
+            --multi-border: #bbf7d0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background-color: #f8fafc;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: rotate 15s linear infinite;
+            z-index: 1;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            opacity: 0.95;
+        }
+        
+        .course-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background: var(--gray-100);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .info-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: var(--primary-light);
+        }
+        
+        .info-item strong {
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .week-navigation {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .week-btn {
+            padding: 14px 28px;
+            background: white;
+            border: 2px solid var(--gray-300);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .week-btn:hover {
+            background: var(--gray-100);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .week-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 5px 20px rgba(37, 99, 235, 0.3);
+        }
+        
+        .assignment-header {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(245, 158, 11, 0.2);
+            border-left: 6px solid var(--warning);
+            position: relative;
+        }
+        
+        .assignment-header::before {
+            content: "Week 8 Assignment";
+            position: absolute;
+            top: -15px;
+            left: 30px;
+            background: var(--warning);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .assignment-header h3 {
+            color: #92400e;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .assignment-header p {
+            color: #666;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        
+        .questions-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 35px;
+            margin-bottom: 50px;
+        }
+        
+        .question {
+            background: white;
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 2px solid var(--gray-200);
+        }
+        
+        .question:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            border-color: var(--primary-light);
+        }
+        
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.4rem;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .question-number {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .number-circle {
+            width: 42px;
+            height: 42px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .multi-tag {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            align-self: center;
+        }
+        
+        .question-content {
+            margin-bottom: 30px;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--gray-800);
+        }
+        
+        .options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin: 0;
+        }
+        
+        .option {
+            padding: 22px 25px;
+            background: var(--gray-100);
+            border: 2px solid var(--gray-300);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            min-height: 60px;
+        }
+        
+        .option:hover {
+            background: #e0f2fe;
+            transform: translateX(5px);
+            border-color: var(--info);
+        }
+        
+        .option.selected {
+            background: #dbeafe;
+            border-color: var(--primary);
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+        }
+        
+        .option.correct {
+            background: var(--correct) !important;
+            border-color: var(--success) !important;
+            color: #065f46;
+            font-weight: 600;
+            animation: pulse 0.6s ease-in-out;
+        }
+        
+        .option.incorrect {
+            background: var(--incorrect) !important;
+            border-color: var(--danger) !important;
+            color: #b91c1c;
+        }
+        
+        .multi-select .option {
+            padding-left: 65px;
+            background: var(--multi-bg);
+            border-color: var(--multi-border);
+        }
+        
+        .multi-select .option:hover {
+            background: #dcfce7;
+        }
+        
+        .multi-select input[type="checkbox"] {
+            position: absolute;
+            left: 25px;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            accent-color: var(--primary);
+            border-radius: 6px;
+        }
+        
+        .explanation {
+            margin-top: 25px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f0fdff, #ccfbfe);
+            border-radius: 14px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            border-left: 5px solid var(--info);
+            display: none;
+        }
+        
+        .explanation.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 18px 50px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.3rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            margin: 50px auto 30px;
+            display: block;
+            box-shadow: 0 5px 25px rgba(16, 185, 129, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.5);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .submit-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+        
+        .result {
+            margin: 50px auto;
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+            max-width: 700px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            animation: fadeIn 0.8s ease;
+            border: 3px solid transparent;
+        }
+        
+        .result.pass {
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            color: #065f46;
+            border-color: var(--success);
+        }
+        
+        .result.fail {
+            background: linear-gradient(135deg, #fee2e2, #fecaca);
+            color: #b91c1c;
+            border-color: var(--danger);
+        }
+        
+        .score-display {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 25px 0;
+            color: var(--primary);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .progress-container {
+            height: 15px;
+            background: var(--gray-200);
+            border-radius: 10px;
+            margin: 30px auto;
+            max-width: 500px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--success), var(--primary));
+            border-radius: 10px;
+            transition: width 1.2s ease;
+            position: relative;
+        }
+        
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: progressShine 2s infinite;
+        }
+        
+        @keyframes progressShine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--secondary);
+            font-size: 1rem;
+            margin-top: 40px;
+            border-top: 1px solid var(--gray-200);
+        }
+        
+        /* Custom checkbox styling */
+        .multi-select input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+            position: relative;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .multi-select input[type="checkbox"]:checked {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .multi-select input[type="checkbox"]:checked::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 16px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+        }
+        
+        .multi-select input[type="checkbox"]:hover {
+            border-color: var(--primary-dark);
+            transform: scale(1.05);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header h2 {
+                font-size: 1.3rem;
+            }
+            
+            .question-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .submit-btn {
+                width: 95%;
+                margin: 50px 2.5%;
+            }
+            
+            .question {
+                padding: 25px;
+            }
+        }
+        
+        /* Highlight for correct answers in the code */
+        .correct-answer {
+            /* This class is used in the HTML to mark correct answers */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1>NPTEL Deep Learning - IIT Ropar</h1>
+                <h2>Week 8 Assignment</h2>
+            </div>
+        </div>
+
+        <div class="course-info">
+            <div class="info-item">
+                <strong>Course:</strong>
+                <span>Deep Learning</span>
+            </div>
+            <div class="info-item">
+                <strong>Institution:</strong>
+                <span>IIT Ropar</span>
+            </div>
+            <div class="info-item">
+                <strong>Due Date:</strong>
+                <span>2025-09-17, 23:59 IST</span>
+            </div>
+            <div class="info-item">
+                <strong>Status:</strong>
+                <span>Not Submitted</span>
+            </div>
+        </div>
+
+        <div class="week-navigation">
+            <button class="week-btn">Week 0</button>
+            <button class="week-btn">Week 1</button>
+            <button class="week-btn">Week 2</button>
+            <button class="week-btn">Week 3</button>
+            <button class="week-btn">Week 4</button>
+            <button class="week-btn">Week 5</button>
+            <button class="week-btn">Week 6</button>
+            <button class="week-btn active">Week 8</button>
+            <button class="week-btn">Week 9</button>
+        </div>
+
+        <div class="assignment-header">
+            <h3>Assignment 8</h3>
+            <p>This assignment covers topics including training deep neural networks, vanishing gradients, regularization, activation functions, batch normalization, and unsupervised pre-training.</p>
+        </div>
+
+        <form id="assignmentForm" class="questions-container">
+            <!-- Question 1 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">1</div>
+                        <span>Vanishing Gradients</span>
+                    </div>
+                </div>
+                <p class="question-content">A fintech startup is building a deep neural network to predict credit risk. The model initially performs well, but after increasing its depth, the training loss stops improving. What is the most plausible reason for this?</p>
+                <div class="options">
+                    <div class="option" data-value="A">Overfitting due to small dataset size</div>
+                    <div class="option correct-answer" data-value="B">Vanishing gradients due to deep architecture</div>
+                    <div class="option" data-value="C">Underfitting due to low capacity</div>
+                    <div class="option" data-value="D">High learning rate causing exploding gradients</div>
+                </div>
+                <div class="explanation">In very deep networks, gradients can become extremely small as they are backpropagated through many layers, making it difficult for early layers to learn effectively.</div>
+            </div>
+
+            <!-- Question 2 (Multi-select) -->
+            <div class="question multi-select">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">2</div>
+                        <span>Vanishing Gradients Cause</span>
+                    </div>
+                    <div class="multi-tag">MULTIPLE CORRECT</div>
+                </div>
+                <p class="question-content">What causes gradients to vanish in deep neural networks?</p>
+                <div class="options">
+                    <div class="option correct-answer">
+                        <input type="checkbox" id="q2a" name="q2" value="A">
+                        <label for="q2a">Derivative of sigmoid is small when input is large or small</label>
+                    </div>
+                    <div class="option correct-answer">
+                        <input type="checkbox" id="q2b" name="q2" value="B">
+                        <label for="q2b">Chain rule leads to multiplication of several small terms</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q2c" name="q2" value="C">
+                        <label for="q2c">Weight matrices are sparse</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q2d" name="q2" value="D">
+                        <label for="q2d">Gradients are clipped to avoid overflow</label>
+                    </div>
+                </div>
+                <div class="explanation">During backpropagation, the chain rule multiplies gradients from many layers. If these gradients are small (less than 1), their product becomes extremely small, leading to vanishing gradients. The derivative of sigmoid being small for large positive or negative inputs contributes to this problem.</div>
+            </div>
+
+            <!-- Question 3 (Multi-select) -->
+            <div class="question multi-select">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">3</div>
+                        <span>Regularization</span>
+                    </div>
+                    <div class="multi-tag">MULTIPLE CORRECT</div>
+                </div>
+                <p class="question-content">Consider two models trained on the same dataset: Model A uses L1 regularization and Model B uses L2 regularization. Based on the constraint regions (diamond for L1, circle for L2), which of the following statements are correct?</p>
+                <div class="options">
+                    <div class="option correct-answer">
+                        <input type="checkbox" id="q3a" name="q3" value="A">
+                        <label for="q3a">Model A is more likely to produce sparse weight vectors (i.e., with many zero values)</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q3b" name="q3" value="B">
+                        <label for="q3b">L1 regularization tends to shrink weights but is less likely to produce exact zeros compared to L2</label>
+                    </div>
+                    <div class="option correct-answer">
+                        <input type="checkbox" id="q3c" name="q3" value="C">
+                        <label for="q3c">L2 regularization penalizes large weights but allows all weights to stay non-zero</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q3d" name="q3" value="D">
+                        <label for="q3d">The diamond-shaped constraint region also corresponds to L2 regularization</label>
+                    </div>
+                </div>
+                <div class="explanation">L1 regularization (Lasso) tends to produce sparse solutions with many weights exactly zero, while L2 regularization (Ridge) shrinks weights but rarely sets them exactly to zero. The diamond shape corresponds to L1, while the circular shape corresponds to L2.</div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">4</div>
+                        <span>Linear Transformations</span>
+                    </div>
+                </div>
+                <p class="question-content">What if a Deep Neural Network uses only linear transformations (i.e., no non-linear activation functions)?</p>
+                <div class="options">
+                    <div class="option" data-value="A">It can learn highly non-linear and complex decision boundaries</div>
+                    <div class="option correct-answer" data-value="B">It becomes equivalent to a single-layer linear model</div>
+                    <div class="option" data-value="C">It performs better due to reduced complexity</div>
+                    <div class="option" data-value="D">It requires fewer parameters to train</div>
+                </div>
+                <div class="explanation">Without non-linear activation functions, a deep neural network is just a composition of linear transformations, which is itself a linear transformation. This makes it equivalent to a single-layer linear model, regardless of depth.</div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">5</div>
+                        <span>Zero Gradients</span>
+                    </div>
+                </div>
+                <p class="question-content">An engineer trains a deep network, but loss doesn't decrease. Gradients are near zero after a few epochs. What is the best action to fix the issue?</p>
+                <div class="options">
+                    <div class="option" data-value="A">Increase the batch size</div>
+                    <div class="option" data-value="B">Use linear activation in all layers</div>
+                    <div class="option correct-answer" data-value="C">Use better initialization or replace sigmoid with ReLU</div>
+                    <div class="option" data-value="D">Reduce the learning rate</div>
+                </div>
+                <div class="explanation">Near-zero gradients often indicate vanishing gradients, commonly caused by saturating activation functions like sigmoid. ReLU activations and better initialization strategies (like Xavier or He initialization) can help address this issue.</div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">6</div>
+                        <span>Error Surface</span>
+                    </div>
+                </div>
+                <p class="question-content">The figure shows the error surface of a deep neural network (DNN), which is highly nonconvex with multiple valleys and plateaus. What does the error surface in the image imply about training deep neural networks?</p>
+                <div class="options">
+                    <div class="option" data-value="A">The loss surface is convex and easy to optimize</div>
+                    <div class="option" data-value="B">The model has only one global minimum</div>
+                    <div class="option correct-answer" data-value="C">The optimization landscape contains many local minima and flat regions</div>
+                    <div class="option" data-value="D">Pre-training always guarantees convergence to the global minimum</div>
+                </div>
+                <div class="explanation">Deep neural networks typically have highly non-convex loss surfaces with many local minima, saddle points, and flat regions (plateaus), making optimization challenging.</div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">7</div>
+                        <span>Unsupervised Objective</span>
+                    </div>
+                </div>
+                <p class="question-content">What role does the unsupervised objective Ω(θ) serve in this setup?</p>
+                <div class="options">
+                    <div class="option" data-value="A">It reduces the test error directly</div>
+                    <div class="option correct-answer" data-value="B">It provides a constraint on the parameter space</div>
+                    <div class="option" data-value="C">It optimizes only the last layer of the network</div>
+                    <div class="option" data-value="D">It increases the greediness of supervised learning</div>
+                </div>
+                <div class="explanation">Unsupervised pre-training serves as a regularizer by constraining the parameter space to regions that capture useful features from the data distribution before fine-tuning with labeled data.</div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">8</div>
+                        <span>Pre-training Benefit</span>
+                    </div>
+                </div>
+                <p class="question-content">What is a likely benefit of minimizing Ω(θ) before L(θ)?</p>
+                <div class="options">
+                    <div class="option" data-value="A">It guarantees a global minimum in supervised training</div>
+                    <div class="option" data-value="B">It prevents learning features from labeled data</div>
+                    <div class="option correct-answer" data-value="C">It improves generalization by better parameter initialization</div>
+                    <div class="option" data-value="D">It reduces the number of hidden layers required</div>
+                </div>
+                <div class="explanation">Unsupervised pre-training initializes the network parameters in a region of the parameter space that captures useful features from the data, which often leads to better generalization when fine-tuning with the supervised objective.</div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">9</div>
+                        <span>Training Method</span>
+                    </div>
+                </div>
+                <p class="question-content">An engineer is building a deep network for image classification but struggles to train it from scratch. A colleague suggests training each layer as an autoencoder before fine-tuning the entire network. Which training method is being used here?</p>
+                <div class="options">
+                    <div class="option" data-value="A">Supervised learning with batch normalization</div>
+                    <div class="option correct-answer" data-value="B">Layer-wise greedy unsupervised pre-training</div>
+                    <div class="option" data-value="C">Reinforcement learning</div>
+                    <div class="option" data-value="D">Transfer learning</div>
+                </div>
+                <div class="explanation">Training each layer as an autoencoder before fine-tuning the entire network is called layer-wise greedy unsupervised pre-training, which was popularized by researchers like Hinton for training deep networks before better activation functions and initialization methods were developed.</div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">10</div>
+                        <span>Sigmoid Problem</span>
+                    </div>
+                </div>
+                <p class="question-content">A student is training a deep network for digit recognition using sigmoid activation in all layers. Although the architecture is correct, the network's performance doesn't improve even after many epochs. Upon inspecting the gradients, they appear close to zero in early layers. What is the most likely cause for the near-zero gradients?</p>
+                <div class="options">
+                    <div class="option" data-value="A">ReLU function is not working</div>
+                    <div class="option correct-answer" data-value="B">Activation values are saturated at extreme values</div>
+                    <div class="option" data-value="C">Output labels are not one-hot encoded</div>
+                    <div class="option" data-value="D">The optimizer is not configured properly</div>
+                </div>
+                <div class="explanation">Sigmoid activations saturate when inputs are large positive or negative values, producing outputs close to 0 or 1. The derivative of sigmoid at these saturated regions is close to zero, causing vanishing gradients.</div>
+            </div>
+
+            <!-- Question 11 (Multi-select) -->
+            <div class="question multi-select">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">11</div>
+                        <span>Alternative Activations</span>
+                    </div>
+                    <div class="multi-tag">MULTIPLE CORRECT</div>
+                </div>
+                <p class="question-content">Your team is struggling to train a deep network using sigmoid activation. You are asked to suggest alternative activation functions that overcome its limitations. Which of the following activation functions address the problems of vanishing gradients and zero-centering?</p>
+                <div class="options">
+                    <div class="option correct-answer">
+                        <input type="checkbox" id="q11a" name="q11" value="A">
+                        <label for="q11a">Tanh</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q11b" name="q11" value="B">
+                        <label for="q11b">Softmax</label>
+                    </div>
+                    <div class="option correct-answer">
+                        <input type="checkbox" id="q11c" name="q11" value="C">
+                        <label for="q11c">ReLU</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q11d" name="q11" value="D">
+                        <label for="q11d">Linear</label>
+                    </div>
+                </div>
+                <div class="explanation">Tanh is zero-centered and helps with vanishing gradients compared to sigmoid (though not completely solving it). ReLU helps significantly with vanishing gradients as its gradient is 1 for positive inputs, though it's not zero-centered.</div>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">12</div>
+                        <span>Sigmoid Derivative</span>
+                    </div>
+                </div>
+                <p class="question-content">What is the derivative of sigmoid at x=10?</p>
+                <div class="options">
+                    <div class="option" data-value="A">1</div>
+                    <div class="option" data-value="B">0.5</div>
+                    <div class="option correct-answer" data-value="C">Close to 0</div>
+                    <div class="option" data-value="D">Undefined</div>
+                </div>
+                <div class="explanation">The sigmoid function σ(x) = 1/(1+e^(-x)) has derivative σ'(x) = σ(x)(1-σ(x)). At x=10, σ(10) ≈ 1, so σ'(10) ≈ 1*(1-1) = 0. The derivative is very close to zero when the input is large.</div>
+            </div>
+
+            <!-- Question 13 (Multi-select) -->
+            <div class="question multi-select">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">13</div>
+                        <span>Dying ReLU</span>
+                    </div>
+                    <div class="multi-tag">MULTIPLE CORRECT</div>
+                </div>
+                <p class="question-content">What increases the risk of dying ReLU neurons?</p>
+                <div class="options">
+                    <div class="option correct-answer">
+                        <input type="checkbox" id="q13a" name="q13" value="A">
+                        <label for="q13a">Negative bias initialization</label>
+                    </div>
+                    <div class="option correct-answer">
+                        <input type="checkbox" id="q13b" name="q13" value="B">
+                        <label for="q13b">Large learning rate</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q13c" name="q13" value="C">
+                        <label for="q13c">Zero-centered inputs</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q13d" name="q13" value="D">
+                        <label for="q13d">Xavier initialization</label>
+                    </div>
+                </div>
+                <div class="explanation">Large learning rates can cause weights to update drastically, pushing neurons into the negative region where ReLU has zero gradient. Negative bias initialization makes it more likely that the pre-activation will be negative, causing the neuron to be "dead".</div>
+            </div>
+
+            <!-- Question 14 (Multi-select) -->
+            <div class="question multi-select">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">14</div>
+                        <span>Activation Derivatives</span>
+                    </div>
+                    <div class="multi-tag">MULTIPLE CORRECT</div>
+                </div>
+                <p class="question-content">Select a correct option for the following figures</p>
+                <div style="background: #f1f5f9; border: 2px dashed var(--gray-300); height: 120px; display: flex; align-items: center; justify-content: center; margin: 20px 0; border-radius: 12px; color: var(--secondary); font-weight: 500;">
+                    Figure A: Shows a function that is 0 for x<0 and 1 for x>0
+                </div>
+                <div style="background: #f1f5f9; border: 2px dashed var(--gray-300); height: 120px; display: flex; align-items: center; justify-content: center; margin: 20px 0; border-radius: 12px; color: var(--secondary); font-weight: 500;">
+                    Figure B: Shows a bell-shaped curve centered at 0, with maximum value around 0.25
+                </div>
+                <div class="options">
+                    <div class="option correct-answer">
+                        <input type="checkbox" id="q14a" name="q14" value="A">
+                        <label for="q14a">Figure A is derivative of ReLU</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q14b" name="q14" value="B">
+                        <label for="q14b">Figure B is derivative of ReLU</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q14c" name="q14" value="C">
+                        <label for="q14c">Figure A is derivative of Sigmoid</label>
+                    </div>
+                    <div class="option correct-answer">
+                        <input type="checkbox" id="q14d" name="q14" value="D">
+                        <label for="q14d">Figure B is derivative of Sigmoid</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q14e" name="q14" value="E">
+                        <label for="q14e">Figure A is derivative of Tanh</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q14f" name="q14" value="F">
+                        <label for="q14f">Figure B is derivative of Tanh</label>
+                    </div>
+                </div>
+                <div class="explanation">The derivative of ReLU is 0 for x<0 and 1 for x>0, which matches Figure A. The derivative of sigmoid is σ'(x) = σ(x)(1-σ(x)), which has a bell-shaped curve with maximum at x=0, matching Figure B.</div>
+            </div>
+
+            <!-- Question 15 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">15</div>
+                        <span>Activation Functions</span>
+                    </div>
+                </div>
+                <p class="question-content">Select the correct match of activation functions with the description.</p>
+                <table style="width: 100%; margin: 25px 0; border-collapse: collapse; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <thead>
+                        <tr style="background: var(--primary); color: white;">
+                            <th style="text-align: left; padding: 15px 20px; border-right: 1px solid rgba(255,255,255,0.2);">Activation Function</th>
+                            <th style="text-align: left; padding: 15px 20px;">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid var(--gray-200); border-right: 1px solid var(--gray-200); background: var(--gray-100);">A. Sigmoid</td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid var(--gray-200);">1. Commonly used in LSTMs/RNNs</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid var(--gray-200); border-right: 1px solid var(--gray-200); background: var(--gray-100);">B. ReLU</td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid var(--gray-200);">2. Often leads to vanishing gradients</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid var(--gray-200); border-right: 1px solid var(--gray-200); background: var(--gray-100);">C. Leaky ReLU/Maxout</td>
+                            <td style="padding: 15px 20px; border-bottom: 1px solid var(--gray-200);">3. Standard unit in CNNs</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px 20px; border-right: 1px solid var(--gray-200); background: var(--gray-100);">D. Tanh</td>
+                            <td style="padding: 15px 20px;">4. Explored as alternative to handle dead units</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="options">
+                    <div class="option correct-answer" data-value="A">A-2, B-3, C-4, D-1</div>
+                    <div class="option" data-value="B">A-1, B-2, C-3, D-4</div>
+                    <div class="option" data-value="C">A-4, B-1, C-2, D-3</div>
+                    <div class="option" data-value="D">A-3, B-4, C-1, D-2</div>
+                </div>
+                <div class="explanation">Sigmoid often leads to vanishing gradients (A-2). ReLU is the standard unit in CNNs (B-3). Leaky ReLU/Maxout are alternatives to handle dead units (C-4). Tanh is commonly used in LSTMs/RNNs (D-1).</div>
+            </div>
+
+            <!-- Question 16 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">16</div>
+                        <span>Dying ReLU</span>
+                    </div>
+                </div>
+                <p class="question-content">What is the primary reason neurons may "die" when using ReLU activations?</p>
+                <div class="options">
+                    <div class="option" data-value="A">ReLU is a nonlinear function</div>
+                    <div class="option correct-answer" data-value="B">ReLU's gradient becomes zero for negative inputs</div>
+                    <div class="option" data-value="C">ReLU saturates in the positive region</div>
+                    <div class="option" data-value="D">Bias is always fixed in ReLU</div>
+                </div>
+                <div class="explanation">When a ReLU neuron's input (pre-activation) is negative, its output is 0 and its gradient is 0. This means no gradient flows back through this neuron during backpropagation, so its weights never update - the neuron is "dead".</div>
+            </div>
+
+            <!-- Question 17 (Multi-select) -->
+            <div class="question multi-select">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">17</div>
+                        <span>Preventing Dying ReLU</span>
+                    </div>
+                    <div class="multi-tag">MULTIPLE CORRECT</div>
+                </div>
+                <p class="question-content">Which of the following strategies can help prevent the dying ReLU problem? Select all that apply:</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="checkbox" id="q17a" name="q17" value="A">
+                        <label for="q17a">Using a very large learning rate</label>
+                    </div>
+                    <div class="option correct-answer">
+                        <input type="checkbox" id="q17b" name="q17" value="B">
+                        <label for="q17b">Initializing bias to a small positive value</label>
+                    </div>
+                    <div class="option correct-answer">
+                        <input type="checkbox" id="q17c" name="q17" value="C">
+                        <label for="q17c">Using sigmoid instead of ReLU</label>
+                    </div>
+                    <div class="option correct-answer">
+                        <input type="checkbox" id="q17d" name="q17" value="D">
+                        <label for="q17d">Using variants like Leaky ReLU</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q17e" name="q17" value="E">
+                        <label for="q17e">Setting weights to zero</label>
+                    </div>
+                </div>
+                <div class="explanation">Initializing bias to a small positive value makes it less likely that the pre-activation will be negative. Using sigmoid avoids the dying neuron problem (though introduces vanishing gradients). Leaky ReLU allows a small gradient even for negative inputs, preventing neurons from dying completely.</div>
+            </div>
+
+            <!-- Question 18 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">18</div>
+                        <span>ReLU Advantage</span>
+                    </div>
+                </div>
+                <p class="question-content">Why does ReLU help speed up convergence compared to sigmoid or tanh?</p>
+                <div class="options">
+                    <div class="option" data-value="A">It has a simpler formula</div>
+                    <div class="option" data-value="B">Its gradient never vanishes</div>
+                    <div class="option correct-answer" data-value="C">It avoids saturation in positive regions</div>
+                    <div class="option" data-value="D">It uses fewer parameters</div>
+                </div>
+                <div class="explanation">ReLU avoids saturation in the positive region (where its gradient is 1), which helps prevent vanishing gradients and allows for faster convergence compared to sigmoid or tanh, which saturate and have small gradients for large positive or negative inputs.</div>
+            </div>
+
+            <!-- Question 19 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">19</div>
+                        <span>ReLU Calculation</span>
+                    </div>
+                </div>
+                <p class="question-content">You are given the input to a ReLU neuron as: X=2, W=1.5, W=-0.5, b=1. What is the output? (Assuming calculation: z = 2×1.5 + (-0.5) = 3 - 0.5 = 2.5, ReLU(2.5) = 2.5)</p>
+                <div class="options">
+                    <div class="option correct-answer" data-value="A">2.5</div>
+                    <div class="option" data-value="B">3.0</div>
+                    <div class="option" data-value="C">2.0</div>
+                    <div class="option" data-value="D">1.0</div>
+                </div>
+                <div class="explanation">Based on the given values and available options, the most reasonable interpretation is: z = 2 × 1.5 + (-0.5) = 3 - 0.5 = 2.5, ReLU(2.5) = 2.5.</div>
+            </div>
+
+            <!-- Question 20 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">20</div>
+                        <span>Dead ReLU Gradient</span>
+                    </div>
+                </div>
+                <p class="question-content">For a neuron using ReLU, you observe that its output remains 0 for all training samples, and its pre-activation z ≤ -0.1 always. What is the effective gradient flowing through it?</p>
+                <div class="options">
+                    <div class="option" data-value="A">Same as output gradient</div>
+                    <div class="option correct-answer" data-value="B">0</div>
+                    <div class="option" data-value="C">Depends on weights</div>
+                    <div class="option" data-value="D">1</div>
+                </div>
+                <div class="explanation">For ReLU, when the pre-activation z ≤ 0, the activation is 0 and the derivative is 0. This means the gradient flowing backward through this neuron is 0, regardless of the gradient coming from the output.</div>
+            </div>
+
+            <!-- Question 21 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">21</div>
+                        <span>Leaky ReLU</span>
+                    </div>
+                </div>
+                <p class="question-content">A neuron has input x=-5. Using Leaky ReLU with slope 0.01, what is the output?</p>
+                <div class="options">
+                    <div class="option" data-value="A">0</div>
+                    <div class="option" data-value="B">-0.5</div>
+                    <div class="option" data-value="C">-5</div>
+                    <div class="option correct-answer" data-value="D">-0.05</div>
+                </div>
+                <div class="explanation">Leaky ReLU is defined as: f(x) = x if x > 0, f(x) = αx if x ≤ 0, where α is the slope (0.01). For x = -5, output = 0.01 × (-5) = -0.05.</div>
+            </div>
+
+            <!-- Question 22 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">22</div>
+                        <span>Parametric ReLU</span>
+                    </div>
+                </div>
+                <p class="question-content">Assume a Parametric ReLU with α=0.2. For input x=-3, what is the output?</p>
+                <div class="options">
+                    <div class="option" data-value="A">0</div>
+                    <div class="option correct-answer" data-value="B">-0.6</div>
+                    <div class="option" data-value="C">-3</div>
+                    <div class="option" data-value="D">-1.5</div>
+                </div>
+                <div class="explanation">Parametric ReLU (PReLU) is similar to Leaky ReLU but with a learnable parameter α. For negative inputs, output = α × x. With α = 0.2 and x = -3, output = 0.2 × (-3) = -0.6.</div>
+            </div>
+
+            <!-- Question 23 (Multi-select) -->
+            <div class="question multi-select">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">23</div>
+                        <span>Leaky ReLU</span>
+                    </div>
+                    <div class="multi-tag">MULTIPLE CORRECT</div>
+                </div>
+                <p class="question-content">Which of the following is true about Leaky ReLU compared to standard ReLU?</p>
+                <div class="options">
+                    <div class="option correct-answer">
+                        <input type="checkbox" id="q23a" name="q23" value="A">
+                        <label for="q23a">Leaky ReLU allows small gradients even for negative inputs</label>
+                    </div>
+                    <div class="option correct-answer">
+                        <input type="checkbox" id="q23b" name="q23" value="B">
+                        <label for="q23b">Leaky ReLU avoids dead neuron problem</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q23c" name="q23" value="C">
+                        <label for="q23c">Leaky ReLU saturates at large positive values</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q23d" name="q23" value="D">
+                        <label for="q23d">Leaky ReLU is more computationally expensive than Sigmoid</label>
+                    </div>
+                </div>
+                <div class="explanation">Leaky ReLU allows a small, non-zero gradient when the input is negative (f(x) = αx for x < 0, where α is a small positive constant), which helps prevent neurons from dying completely. It does not saturate at large positive values (it's linear) and is computationally similar to ReLU (very cheap).</div>
+            </div>
+
+            <!-- Question 24 (Multi-select) -->
+            <div class="question multi-select">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">24</div>
+                        <span>ELU Activation</span>
+                    </div>
+                    <div class="multi-tag">MULTIPLE CORRECT</div>
+                </div>
+                <p class="question-content">A data scientist is training a deep neural network to classify customer sentiment. Initially, they used ReLU as the activation function. However, they observed that some neurons were dying during training, especially for inputs near or below zero. They switched to Exponential Linear Unit (ELU) activation with α=1, hoping to retain some gradient flow even for negative input values. During debugging, the scientist prints the outputs from an intermediate layer for three inputs: Input A: x=-1, Input B: x=0, Input C: x=2. Based on the properties of ELU, which of the following are true?</p>
+                <div class="options">
+                    <div class="option correct-answer">
+                        <input type="checkbox" id="q24a" name="q24" value="A">
+                        <label for="q24a">Input A will output approximately -0.63</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" id="q24b" name="q24" value="B">
+                        <label for="q24b">Input B will output 1</label>
+                    </div>
+                    <div class="option correct-answer">
+                        <input type="checkbox" id="q24c" name="q24" value="C">
+                        <label for="q24c">Input C will output 2</label>
+                    </div>
+                    <div class="option correct-answer">
+                        <input type="checkbox" id="q24d" name="q24" value="D">
+                        <label for="q24d">ELU provides small but non-zero gradient when x<0, preventing dying neurons</label>
+                    </div>
+                </div>
+                <div class="explanation">ELU is defined as: f(x) = x if x > 0, f(x) = α(e^x - 1) if x ≤ 0. With α=1: For x=-1: f(-1) = 1×(e^(-1) - 1) ≈ 1×(0.3679 - 1) = -0.6321. For x=0: f(0) = 0 (since for x>0 it's x, and at x=0 it's continuous: α(e^0 - 1) = 1×(1-1) = 0). For x=2: f(2) = 2. ELU provides non-zero gradients for negative inputs, helping prevent the dying ReLU problem.</div>
+            </div>
+
+            <!-- Question 25 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">25</div>
+                        <span>Maxout Neuron</span>
+                    </div>
+                </div>
+                <p class="question-content">Which of the following is true about the Maxout Neuron?</p>
+                <div class="options">
+                    <div class="option" data-value="A">It uses a minimum function over multiple linear combinations of inputs</div>
+                    <div class="option" data-value="B">It always suffers from saturation for negative inputs</div>
+                    <div class="option correct-answer" data-value="C">It requires more parameters compared to ReLU</div>
+                    <div class="option" data-value="D">It can only approximate sigmoid-like functions</div>
+                </div>
+                <div class="explanation">A Maxout neuron computes multiple linear combinations of inputs and outputs the maximum value. This requires learning multiple weight vectors per neuron, increasing the number of parameters compared to a standard ReLU neuron.</div>
+            </div>
+
+            <!-- Question 26 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">26</div>
+                        <span>Weight Initialization</span>
+                    </div>
+                </div>
+                <p class="question-content">Why is it important to initialize weights randomly in a deep neural network instead of initializing them all to the same value?</p>
+                <div class="options">
+                    <div class="option" data-value="A">To increase training time</div>
+                    <div class="option correct-answer" data-value="B">To break symmetry and allow neurons to learn different features</div>
+                    <div class="option" data-value="C">To reduce variance in predictions</div>
+                    <div class="option" data-value="D">To prevent overfitting by regularization</div>
+                </div>
+                <div class="explanation">If all weights are initialized to the same value, all neurons in a layer will compute the same output and have the same gradients during backpropagation. This symmetry prevents neurons from learning different features. Random initialization breaks this symmetry.</div>
+            </div>
+
+            <!-- Question 27 -->
+            <div class="question">
+                <div class="question-header">
+                    <div class="question-number">
+                        <div class="number-circle">27</div>
+                        <span>Batch Normalization</span>
+                    </div>
+                </div>
+                <p class="question-content">In Batch Normalization, which of the following parameters are learned during training?</p>
+                <div class="options">
+                    <div class="option" data-value="A">Mean and Variance</div>
+                    <div class="option" data-value="B">Mean and ε</div>
+                    <div class="option correct-answer" data-value="C">γ (scale) and β (shift)</div>
+                    <div class="option" data-value="D">Variance and ε</div>
+                </div>
+                <div class="explanation">In Batch Normalization, the mean and variance are computed from the current batch during training (not learned parameters). The parameters γ (gamma, scale) and β (beta, shift) are learned during training to allow the network to undo the normalization if needed.</div>
+            </div>
+
+            <button type="button" class="submit-btn" id="submitBtn">Submit Assignment</button>
+        </form>
+
+        <div id="result" class="result" style="display: none;"></div>
+
+        <div class="footer">
+            <p>© 2025 NPTEL Deep Learning - IIT Ropar | Interactive Assignment Interface</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Questions that are multi-select (as specified: 2, 3, 11, 13, 14, 17, 23, 24)
+            const multiSelectQuestions = [2, 3, 11, 13, 14, 17, 23, 24];
+            
+            // Handle single choice questions
+            const singleOptions = document.querySelectorAll('.option[data-value]');
+            singleOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Check if this question is multi-select
+                    const questionNum = parseInt(this.closest('.question').querySelector('.number-circle').textContent);
+                    if (multiSelectQuestions.includes(questionNum)) {
+                        return; // Don't handle click for multi-select questions
+                    }
+                    
+                    // Remove selected class from all options in this question
+                    const question = this.closest('.question');
+                    const allOptions = question.querySelectorAll('.option[data-value]');
+                    allOptions.forEach(opt => opt.classList.remove('selected'));
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                });
+            });
+
+            // Handle multi-select questions - toggle selection on label click
+            const multiSelectLabels = document.querySelectorAll('.multi-select label');
+            multiSelectLabels.forEach(label => {
+                label.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const checkbox = this.previousElementSibling;
+                    checkbox.checked = !checkbox.checked;
+                });
+            });
+
+            // Toggle explanation on question click (except for checkboxes and labels)
+            const questions = document.querySelectorAll('.question');
+            questions.forEach(question => {
+                question.addEventListener('click', function(e) {
+                    // Don't toggle if clicking on checkbox or its label
+                    if (e.target.tagName === 'INPUT' || e.target.tagName === 'LABEL') {
+                        return;
+                    }
+                    
+                    const explanation = this.querySelector('.explanation');
+                    if (explanation) {
+                        explanation.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Handle submit button
+            document.getElementById('submitBtn').addEventListener('click', function() {
+                const questions = document.querySelectorAll('.question');
+                let score = 0;
+                let total = questions.length;
+                
+                questions.forEach(question => {
+                    const correctAnswers = question.querySelectorAll('.correct-answer');
+                    let selectedOptions;
+                    const questionNum = parseInt(question.querySelector('.number-circle').textContent);
+                    
+                    // For single choice questions
+                    if (!multiSelectQuestions.includes(questionNum)) {
+                        selectedOptions = question.querySelectorAll('.option.selected');
+                        
+                        if (selectedOptions.length === 1 && selectedOptions[0].classList.contains('correct-answer')) {
+                            score++;
+                            selectedOptions[0].classList.add('correct');
+                        } else {
+                            selectedOptions.forEach(option => {
+                                option.classList.add('incorrect');
+                            });
+                            correctAnswers.forEach(correct => {
+                                correct.classList.add('correct');
+                            });
+                        }
+                    } 
+                    // For multi-select questions
+                    else {
+                        const checkboxes = question.querySelectorAll('input[type="checkbox"]');
+                        const selectedCheckboxes = Array.from(checkboxes).filter(cb => cb.checked);
+                        const correctCheckboxes = Array.from(correctAnswers).map(ca => ca.querySelector('input[type="checkbox"]'));
+                        const correctValues = correctCheckboxes.map(cb => cb.value);
+                        const selectedValues = selectedCheckboxes.map(cb => cb.value);
+                        
+                        // Check if selected values match correct values exactly
+                        const isCorrect = selectedValues.length === correctValues.length && 
+                            selectedValues.every(val => correctValues.includes(val)) &&
+                            correctValues.every(val => selectedValues.includes(val));
+                        
+                        if (isCorrect) {
+                            score++;
+                            selectedCheckboxes.forEach(cb => {
+                                cb.closest('.option').classList.add('correct');
+                            });
+                        } else {
+                            // Mark incorrect selections
+                            selectedCheckboxes.forEach(cb => {
+                                if (!correctValues.includes(cb.value)) {
+                                    cb.closest('.option').classList.add('incorrect');
+                                } else {
+                                    cb.closest('.option').classList.add('correct');
+                                }
+                            });
+                            
+                            // Show correct answers that weren't selected
+                            correctCheckboxes.forEach(cb => {
+                                if (!selectedValues.includes(cb.value)) {
+                                    cb.closest('.option').classList.add('correct');
+                                }
+                            });
+                        }
+                    }
+                });
+                
+                // Display result
+                const resultDiv = document.getElementById('result');
+                resultDiv.style.display = 'block';
+                resultDiv.innerHTML = `
+                    <div>Your Final Score</div>
+                    <div class="score-display">${score}/${total}</div>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 0%;"></div>
+                    </div>
+                    <div>(${Math.round((score/total)*100)}%)</div>
+                `;
+                
+                // Set progress bar width after a small delay for animation
+                setTimeout(() => {
+                    document.querySelector('.progress-bar').style.width = `${(score/total)*100}%`;
+                }, 100);
+                
+                if (score/total >= 0.7) {
+                    resultDiv.className = 'result pass';
+                    resultDiv.innerHTML += '<br><br>🎉 Congratulations! You passed the assignment.';
+                } else {
+                    resultDiv.className = 'result fail';
+                    resultDiv.innerHTML += '<br><br>❌ You need to score at least 70% to pass. Please review the explanations and try again.';
+                }
+                
+                // Scroll to result
+                resultDiv.scrollIntoView({behavior: 'smooth', block: 'center'});
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+    
+              <script>
+                              
+              </script>
+                        </body>
+                        </html>
+                    
